@@ -1,0 +1,9 @@
+{
+  "name": "{{slugcase name}}",
+  "productName": "Compass {{capitalcase name}}",
+  "description": "{{description}}",
+  "version": "0.0.1",
+  "authors": "MongoDB Inc.",
+  "private": true,
+  "main": "./index.js"
+}
