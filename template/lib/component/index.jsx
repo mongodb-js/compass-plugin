@@ -5,7 +5,7 @@ const StateMixin = require('reflux-state-mixin');
 const debug = require('debug')('mongodb-compass:{{slugcase name}}');
 
 
-const {{pascalcase name}} = React.createClass({
+const {{pascalcase name}}Component = React.createClass({
 
   /**
    * automatically subscribe/unsubscribe to changes from the store.
@@ -28,4 +28,4 @@ const {{pascalcase name}} = React.createClass({
 });
 
 
-module.exports = {{pascalcase name}};
+module.exports = {{pascalcase name}}Component;

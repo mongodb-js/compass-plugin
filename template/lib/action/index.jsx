@@ -1,6 +1,6 @@
 const Reflux = require('reflux');
 
-const {{pascalcase name}}Actions = Reflux.createActions([
+const {{pascalcase name}}Action = Reflux.createActions([
   /**
    * define your actions as strings below, for example:
    */
@@ -8,4 +8,4 @@ const {{pascalcase name}}Actions = Reflux.createActions([
   'disable{{pascalcase name}}'
 ]);
 
-module.exports = {{pascalcase name}}Actions;
+module.exports = {{pascalcase name}}Action;
