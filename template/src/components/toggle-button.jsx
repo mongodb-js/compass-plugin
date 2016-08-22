@@ -21,7 +21,7 @@ const ToggleButton = React.createClass({
   render() {
     return (
         <button
-          className="reflux-capacitor-toggle-button"
+          className="{{slugcase name}}-toggle-button"
           type="button"
           onClick={this.props.onClick}
         >{this.props.children}</button>
