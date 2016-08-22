@@ -1,38 +1,20 @@
-# khaos-compass-package [![][travis_img]][travis_url] [![][npm_img]][npm_url]
+# {{slugcase name}} [![][travis_img]][travis_url] [![][npm_img]][npm_url]
 
-> Component template for developing new Compass packages with React components
-and Reflux stores and actions.
+> {{description}}
 
 ## Installation
 
-This module is a [khaos][khaos] template. If you don't have khaos installed yet, first install it globally with:
+TODO
 
-```
-npm install -g khaos
-```
+## Usage
 
-Now create a new Compass package `<mypackage>` based on this template with:
+TODO
 
-```
-khaos create mongodb-js/khaos-compass-package ./<mypackage>
-```
+## License
 
-You are prompted to fill out some template variables:
+Apache 2
 
-- `name`: short name of the package, e.g. `query-bar`, or `db-stats` (do not use spaces!)
-- `scope`: the scope of the component. For collection level scope (e.g. a view
-  on the collection level), use `Collection`, for global application scope, use
-  `App`, etc.
-- `description`: a one sentence description of the package.
-
-Once the template is created, install the dependencies with:
-
-```
-cd <mypackage>
-npm install
-```
-
-You're now ready to implement your Compass package.
+===
 
 ## Features
 
@@ -81,7 +63,6 @@ Apache 2.0
 [npm_img]: https://img.shields.io/npm/v/mongodb-component-template.svg?style=flat-square
 [npm_url]: https://www.npmjs.org/package/mongodb-component-template
 [react-storybook]: https://github.com/kadirahq/react-storybook
-[khaos]: http://khaos.io/
 [enzyme]: http://airbnb.io/enzyme/
 [enzyme-chai]: https://github.com/producthunt/chai-enzyme
 [jsdom]: https://github.com/tmpvar/jsdom
