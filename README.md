@@ -1,4 +1,4 @@
-# khaos-compass-package [![][travis_img]][travis_url] [![][npm_img]][npm_url]
+# khaos-compass-package
 
 > Component template for developing new Compass packages with React components
 and Reflux stores and actions.
@@ -76,10 +76,6 @@ For completeness, below is a list of directories present in this module:
 
 Apache 2.0
 
-[travis_img]: https://img.shields.io/travis/mongodb-js/component-template.svg?style=flat-square
-[travis_url]: https://travis-ci.org/mongodb-js/component-template
-[npm_img]: https://img.shields.io/npm/v/mongodb-component-template.svg?style=flat-square
-[npm_url]: https://www.npmjs.org/package/mongodb-component-template
 [react-storybook]: https://github.com/kadirahq/react-storybook
 [khaos]: http://khaos.io/
 [enzyme]: http://airbnb.io/enzyme/
