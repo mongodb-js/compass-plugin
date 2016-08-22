@@ -1,5 +1,5 @@
 const Reflux = require('reflux');
-const {{pascalcase name}}Actions = require('../action');
+const {{pascalcase name}}Actions = require('../actions');
 const StateMixin = require('reflux-state-mixin');
 
 const debug = require('debug')('mongodb-compass:stores:{{slugcase name}}');
@@ -31,14 +31,19 @@ const {{pascalcase name}}Store = Reflux.createStore({
    * @return {Object} initial store state.
    */
   getInitialState() {
-    return {};
+    return {
+      status: 'enabled'
+    };
   },
 
   /**
    * handlers for each action defined in ../actions/index.jsx, for example:
    */
-  enable{{pascalcase name}}() {},
-  disable{{pascalcase name}}() {},
+  toggleStatus() {
+    this.setState({
+      status: this.state.status === 'enabled' ? 'disabled' : 'enabled'
+    });
+  },
 
   /**
    * log changes to the store as debug messages.
