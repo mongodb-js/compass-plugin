@@ -2,7 +2,7 @@ const Reflux = require('reflux');
 const {{pascalcase name}}Actions = require('../actions');
 const StateMixin = require('reflux-state-mixin');
 
-const debug = require('debug')('mongodb-compass:stores:{{slugcase name}}');
+// const debug = require('debug')('mongodb-compass:stores:{{slugcase name}}');
 
 /**
  * {{capitalcase name}} store.
