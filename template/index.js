@@ -1,14 +1,14 @@
 const app = require('ampersand-app');
-const {{pascalcase name}}Component = require('./lib/component');
-const {{pascalcase name}}Action = require('./lib/action');
-const {{pascalcase name}}Store = require('./lib/store');
+const {{pascalcase name}}Component = require('./lib/components');
+const {{pascalcase name}}Actions = require('./lib/actions');
+const {{pascalcase name}}Store = require('./lib/stores');
 
 /**
  * Activate all the components in the {{capitalcase name}} package.
  */
 function activate() {
   app.appRegistry.registerComponent('{{pascalcase scope}}:{{pascalcase name}}', {{pascalcase name}}Component);
-  app.appRegistry.registerAction('{{pascalcase name}}Action', {{pascalcase name}}Action);
+  app.appRegistry.registerAction('{{pascalcase name}}Actions', {{pascalcase name}}Actions);
   app.appRegistry.registerStore('{{pascalcase name}}Store', {{pascalcase name}}Store);
 }
 
@@ -17,9 +17,10 @@ function activate() {
  */
 function deactivate() {
   app.appRegistry.deregisterComponent('{{pascalcase scope}}:{{pascalcase name}}');
-  app.appRegistry.deregisterAction('{{pascalcase name}}Action');
+  app.appRegistry.deregisterAction('{{pascalcase name}}Actions');
   app.appRegistry.deregisterStore('{{pascalcase name}}Store');
 }
 
+module.exports = {{pascalcase name}}Component;
 module.exports.activate = activate;
 module.exports.deactivate = deactivate;

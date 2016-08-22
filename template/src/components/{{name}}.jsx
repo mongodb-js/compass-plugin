@@ -1,10 +1,10 @@
 const React = require('react');
 const StateMixin = require('reflux-state-mixin');
-const {{pascalcase name}}Store = require('../store');
+const {{pascalcase name}}Store = require('../stores');
 const {{pascalcase name}}Actions = require('../actions');
 const ToggleButton = require('./toggle-button');
 
-const debug = require('debug')('mongodb-compass:{{slugcase name}}');
+// const debug = require('debug')('mongodb-compass:{{slugcase name}}');
 
 const {{pascalcase name}}Component = React.createClass({
   /**
@@ -24,9 +24,8 @@ const {{pascalcase name}}Component = React.createClass({
   render() {
     return (
       <div className="{{slugcase name}}">
-        <h2 className="{{slugcase name}}-title">I'm a {{capitalcase name}} component.</h2>
-        <p>{{description}}<p>
-        <br />
+        <h2 className="{{slugcase name}}-title">{{pascalcase name}}Component.</h2>
+        <p><i>{{description}}</i></p>
         <p>This component is connected to a reflux store. It contains a <code>
           &lt;ToggleButton/&gt;</code> component (below) that triggers
           a <code>toggleStatus()</code> action in the store, which changes
