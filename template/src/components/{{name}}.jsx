@@ -24,7 +24,7 @@ const {{pascalcase name}}Component = React.createClass({
   render() {
     return (
       <div className="{{slugcase name}}">
-        <h2 className="{{slugcase name}}-title">{{pascalcase name}}Component.</h2>
+        <h2 className="{{slugcase name}}-title">{{pascalcase name}}Component</h2>
         <p><i>{{description}}</i></p>
         <p>This component is connected to a reflux store. It contains a <code>
           &lt;ToggleButton/&gt;</code> component (below) that triggers
