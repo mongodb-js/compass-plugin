@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "ci": "npm run check && npm test",
-    "test": "mocha --compilers js:babel-register --recursive ./test/**/*.test.js",
+    "test": "mocha --compilers js:babel-register test/helper.js ./test/**/*.test.js",
     "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "check": "mongodb-js-precommit ./src ./test",
     "compile": "npm run jsx && npm run less",

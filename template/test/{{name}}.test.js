@@ -4,9 +4,9 @@ const chaiEnzyme = require('chai-enzyme');
 const expect = chai.expect;
 const React = require('react');
 
-const shallow = require('enzyme').shallow;
+const mount = require('enzyme').mount;
 
-const {{pascalcase name}}Component = require('../lib/components');
+const {{pascalcase name}}Component = require('../lib/components/{{name}}');
 const ToggleButton = require('../lib/components/toggle-button');
 
 // use chai-enzyme assertions, see https://github.com/producthunt/chai-enzyme
@@ -16,7 +16,7 @@ describe('<{{pascalcase name}}Component />', function() {
   let component;
 
   beforeEach(function() {
-    component = shallow(<{{pascalcase name}}Component />);
+    component = mount(<{{pascalcase name}}Component />);
   });
 
   it('should contain one <h2> tag', function() {
