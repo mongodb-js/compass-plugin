@@ -25,7 +25,7 @@ describe('<{{pascalcase name}}Component />', function() {
   it('should contain one <ToggleButton />', function() {
     expect(component.find(ToggleButton)).to.have.length(1);
   });
-  it('should initially have state {status: \'enabled\'}', function() {
-    expect(component).to.have.state('status', 'enabled');
+  it('should initially have prop {status: \'enabled\'}', function() {
+    expect(component).to.have.prop('status', 'enabled');
   });
 });
