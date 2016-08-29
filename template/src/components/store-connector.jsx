@@ -1,8 +1,6 @@
 const React = require('react');
 const _ = require('lodash');
 
-// const debug = require('debug')('mongodb-compass:compass-package');
-
 class StoreConnector extends React.Component {
 
   constructor(props) {
