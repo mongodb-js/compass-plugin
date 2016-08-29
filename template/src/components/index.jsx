@@ -1,7 +1,7 @@
 const React = require('react');
 const StoreConnector = require('./store-connector');
 const {{pascalcase name}}Component = require('./{{name}}');
-const {{pascalcase name}}Store = require('../stores');
+const Store = require('../stores');
 
 // const debug = require('debug')('mongodb-compass:{{slugcase name}}:index');
 
@@ -13,7 +13,7 @@ class Connected{{pascalcase name}}Component extends React.Component {
    */
   render() {
     return (
-      <StoreConnector store={{{pascalcase name}}Store}>
+      <StoreConnector store={Store}>
         <{{pascalcase name}}Component />
       </StoreConnector>
     );
