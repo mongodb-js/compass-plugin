@@ -1,4 +1,4 @@
-const app = require('ampersand-app');
+const app = require('hadron-app');
 const {{pascalcase name}}Component = require('./lib/components');
 const {{pascalcase name}}Actions = require('./lib/actions');
 const {{pascalcase name}}Store = require('./lib/stores');
