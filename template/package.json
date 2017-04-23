@@ -28,7 +28,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "hadron-app": "^0.2.0",
+    "hadron-app": "^0.2.0"
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.2.1",

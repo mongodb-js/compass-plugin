@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const {{pascalcase name}}Store = require('../lib/stores');
+const {{pascalcase name}}Store = require('../../lib/stores');
 
 describe('{{pascalcase name}}Store', function() {
   beforeEach(function() {
