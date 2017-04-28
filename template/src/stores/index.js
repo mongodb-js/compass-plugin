@@ -1,6 +1,7 @@
 const Reflux = require('reflux');
 const {{pascalcase name}}Actions = require('../actions');
 const StateMixin = require('reflux-state-mixin');
+const { DataServiceStore } = require('mongodb-data-service');
 
 const debug = require('debug')('mongodb-compass:stores:{{slugcase name}}');
 
@@ -23,7 +24,12 @@ const {{pascalcase name}}Store = Reflux.createStore({
   /**
    * Initialize everything that is not part of the store's state.
    */
-  init() {},
+  init() {
+    DataServiceStore.listen((error, dataService) => {
+      // This will happen when the data service is initialized and can be used
+      // if no error is passed.
+    });
+  },
 
   /**
    * Initialize the {{capitalcase name}} store state.
