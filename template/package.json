@@ -61,6 +61,6 @@
     "reflux-state-mixin": "^0.7.0",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
-    "watch": "^0.19.2"
+    "watch": "^1.0.2"
   }
 }
