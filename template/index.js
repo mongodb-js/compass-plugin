@@ -22,9 +22,7 @@ function activate() {
   //   - Database.Tab
   //   - Instance.Tab
   //
-  global.hadronApp.appRegistry.registerRole('Collection.Tab', ROLE);
-
-  global.hadronApp.appRegistry.registerComponent('{{pascalcase scope}}:{{pascalcase name}}', {{pascalcase name}}Component);
+  global.hadronApp.appRegistry.registerRole('{{role}}', ROLE);
   global.hadronApp.appRegistry.registerAction('{{pascalcase name}}Actions', {{pascalcase name}}Actions);
   global.hadronApp.appRegistry.registerStore('{{pascalcase name}}Store', {{pascalcase name}}Store);
 }
@@ -33,9 +31,7 @@ function activate() {
  * Deactivate all the components in the {{capitalcase name}} package.
  */
 function deactivate() {
-  global.hadronApp.appRegistry.deregisterRole('Collection.Tab', ROLE);
-
-  global.hadronApp.appRegistry.deregisterComponent('{{pascalcase scope}}:{{pascalcase name}}');
+  global.hadronApp.appRegistry.deregisterRole('{{role}}', ROLE);
   global.hadronApp.appRegistry.deregisterAction('{{pascalcase name}}Actions');
   global.hadronApp.appRegistry.deregisterStore('{{pascalcase name}}Store');
 }
