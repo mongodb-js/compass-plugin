@@ -4,11 +4,35 @@ const app = require('hadron-app');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const {{pascalcase name}}Component = require('../../lib/components');
+const { DataServiceStore, DataServiceActions } = require('mongodb-data-service');
+const Connection = require('mongodb-connection-model');
 
-ReactDOM.render(
-  React.createElement({{pascalcase name}}Component), document.getElementById('container')
-);
+const {{pascalcase name}}Component = require('../../lib/components');
+const {{pascalcase name}}Store = require('../../lib/stores');
+
+const CONNECTION = new Connection({
+  hostname: '127.0.0.1',
+  port: 27018,
+  ns: '{{slugcase name}}',
+  mongodb_database_name: 'admin'
+});
+
+DataServiceStore.listen((error, ds) => {
+  const stores = global.hadronApp.appRegistry.stores;
+  for (let key in stores) {
+    const store = stores[key];
+    if (store.onConnected) {
+      store.onConnected(error, ds);
+    }
+  }
+  ReactDOM.render(
+    React.createElement({{pascalcase name}}Component),
+    document.getElementById('container')
+  );
+});
 
 global.hadronApp = app;
 global.hadronApp.appRegistry = new AppRegistry();
+global.hadronApp.appRegistry.registerStore('{{pascalcase name}}Store', {{pascalcase name}}Store);
+
+DataServiceActions.connect(CONNECTION);
