@@ -1,4 +1,4 @@
-# khaos-compass-package
+# compass-plugin
 
 > Boilerplate template for developing new Compass plugins with React components
 and Reflux stores and actions.
