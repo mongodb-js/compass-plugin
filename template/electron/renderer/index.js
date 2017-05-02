@@ -18,13 +18,8 @@ const CONNECTION = new Connection({
 });
 
 DataServiceStore.listen((error, ds) => {
-  const stores = global.hadronApp.appRegistry.stores;
-  for (let key in stores) {
-    const store = stores[key];
-    if (store.onConnected) {
-      store.onConnected(error, ds);
-    }
-  }
+  global.hadronApp.appRegistry.onActivated();
+  global.hadronApp.appRegistry.onConnected(error, ds);
   ReactDOM.render(
     React.createElement({{pascalcase name}}Component),
     document.getElementById('container')
