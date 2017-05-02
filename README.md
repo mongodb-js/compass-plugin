@@ -1,6 +1,6 @@
 # khaos-compass-package
 
-> Boilerplate template for developing new Compass packages with React components
+> Boilerplate template for developing new Compass plugins with React components
 and Reflux stores and actions.
 
 ## Installation
@@ -11,23 +11,23 @@ This module is a [khaos][khaos] template. If you don't have khaos installed yet,
 npm install -g khaos
 ```
 
-Now create a new package `<mypackage>` based on this template with:
+Now create a new plugin `<myplugin>` based on this template with:
 
 ```
-khaos create mongodb-js/khaos-compass-package ./<mypackage>
+khaos create mongodb-js/compass-plugin ./<mypackage>
 ```
 
 You are prompted to fill out some template variables:
 
 - `name`: short name of the package, e.g. `query-bar`, or `db-stats` (do not use spaces!)
-- `scope`: the scope of the component. Use `Collection` for collection level scope (e.g. a view
-  on the collection level), and `App` for global application scope. More on scopes TBD.
+- `role`: the role of the component. Use `Collection.Tab` for collection level scope (e.g. a view
+  on the collection level), and `Instance.Tab` for global application scope. More on scopes TBD.
 - `description`: a one sentence description of the package.
 
-Once the package is created, install the dependencies with:
+Once the plugin is created, install the dependencies with:
 
 ```
-cd <mypackage>
+cd <myplugin>
 npm install
 ```
 
