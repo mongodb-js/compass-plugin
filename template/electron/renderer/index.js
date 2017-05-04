@@ -28,6 +28,6 @@ DataServiceStore.listen((error, ds) => {
 
 global.hadronApp = app;
 global.hadronApp.appRegistry = new AppRegistry();
-global.hadronApp.appRegistry.registerStore('{{pascalcase name}}Store', {{pascalcase name}}Store);
+global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
 
 DataServiceActions.connect(CONNECTION);
