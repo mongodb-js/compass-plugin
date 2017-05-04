@@ -23,8 +23,8 @@ function activate() {
   //   - Instance.Tab
   //
   global.hadronApp.appRegistry.registerRole('{{role}}', ROLE);
-  global.hadronApp.appRegistry.registerAction('{{pascalcase name}}Actions', {{pascalcase name}}Actions);
-  global.hadronApp.appRegistry.registerStore('{{pascalcase name}}Store', {{pascalcase name}}Store);
+  global.hadronApp.appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
+  global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
 }
 
 /**
@@ -32,8 +32,8 @@ function activate() {
  */
 function deactivate() {
   global.hadronApp.appRegistry.deregisterRole('{{role}}', ROLE);
-  global.hadronApp.appRegistry.deregisterAction('{{pascalcase name}}Actions');
-  global.hadronApp.appRegistry.deregisterStore('{{pascalcase name}}Store');
+  global.hadronApp.appRegistry.deregisterAction('{{pascalcase name}}.Actions');
+  global.hadronApp.appRegistry.deregisterStore('{{pascalcase name}}.Store');
 }
 
 module.exports = {{pascalcase name}}Component;
