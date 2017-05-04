@@ -1,5 +1,5 @@
 const React = require('react');
-const StoreConnector = require('./store-connector');
+const { StoreConnector } = require('hadron-react-components');
 const {{pascalcase name}}Component = require('./{{name}}');
 const Store = require('../stores');
 
