@@ -14,13 +14,13 @@ npm install -g khaos
 Now create a new plugin `<myplugin>` based on this template with:
 
 ```
-khaos create mongodb-js/compass-plugin ./<mypackage>
+khaos create mongodb-js/compass-plugin ./<myplugin>
 ```
 
 You are prompted to fill out some template variables:
 
-- `name`: short name of the package, e.g. `query-bar`, or `db-stats` (do not use spaces!)
-- `description`: a one sentence description of the package.
+- `name`: short name of `<myplugin>`, e.g. `query-bar`, or `db-stats` (do not use spaces!)
+- `description`: a one sentence description of the plugin.
 - `role`: the role of the component. Use `Collection.Tab` for collection level scope (e.g. a view
   on the collection level), and `Instance.Tab` for global application scope. More on scopes TBD.
 
@@ -31,7 +31,7 @@ cd <myplugin>
 npm install
 ```
 
-You're now ready to implement your Compass package.
+You're now ready to implement your Compass plugin.
 
 ## Features
 
