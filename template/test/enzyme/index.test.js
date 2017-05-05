@@ -7,7 +7,7 @@ const React = require('react');
 const mount = require('enzyme').mount;
 
 const { StoreConnector } = require('hadron-react-components');
-const Connected{{pascalcase name}}Component = require('../lib/components');
+const Connected{{pascalcase name}}Component = require('../../lib/components');
 
 // use chai-enzyme assertions, see https://github.com/producthunt/chai-enzyme
 chai.use(chaiEnzyme());
