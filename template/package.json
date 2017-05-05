@@ -7,7 +7,7 @@
   "scripts": {
     "ci": "npm run check && npm test",
     "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
-    "check": "mongodb-js-precommit './src/**/*{.js,.jsx}' './test/**/*.js'",
+    "check": "mongodb-js-precommit './src/**/*{.js,.jsx}' './test/**/*.js' index.js",
     "compile": "npm run jsx && npm run less",
     "jsx": "babel ./src --out-dir ./lib --presets react",
     "preless": "lessc ./styles/compass/index.less ./lib/styles/compass/index.css",
