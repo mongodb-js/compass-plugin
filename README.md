@@ -5,6 +5,8 @@ and Reflux stores and actions.
 
 ## Installation
 
+This installation guide assumes you have [installed node v7.4 and npm](https://github.com/mongodb-js/mongodb-js/blob/master/docs/setup.md).
+
 This module is a [khaos][khaos] template. If you don't have khaos installed yet, first install it globally with:
 
 ```
