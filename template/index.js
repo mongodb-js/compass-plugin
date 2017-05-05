@@ -6,9 +6,9 @@ const {{pascalcase name}}Store = require('./lib/stores');
  * A sample role for the component.
  */
 const ROLE = {
-  name: "{{ pascalcase name }}",
+  name: '{{ pascalcase name }}',
   component: {{pascalcase name}}Component
-}
+};
 
 /**
  * Activate all the components in the {{capitalcase name}} package.

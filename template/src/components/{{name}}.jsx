@@ -37,6 +37,4 @@ class {{pascalcase name}}Component extends React.Component {
 
 {{pascalcase name}}Component.displayName = '{{pascalcase name}}Component';
 
-
-
 module.exports = {{pascalcase name}}Component;
