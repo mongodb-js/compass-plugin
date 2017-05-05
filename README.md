@@ -21,7 +21,7 @@ khaos create mongodb-js/compass-plugin ./<myplugin>
 
 You are prompted to fill out some template variables:
 
-- `name`: short name of `<myplugin>`, e.g. `query-bar`, or `db-stats` (do not use spaces!)
+- `name`: short name of `<myplugin>`, e.g. `query-bar` or `db-stats`. **Do not use spaces!** [kebab-case](https://stackoverflow.com/questions/11273282/whats-the-name-for-hyphen-separated-case) is recommended. 
 - `description`: a one sentence description of the plugin.
 - `role`: the role of the component. Use `Collection.Tab` for collection level scope (e.g. a view
   on the collection level), and `Instance.Tab` for global application scope. More on scopes TBD.
