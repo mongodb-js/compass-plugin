@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 class ToggleButton extends React.Component {
   /**
@@ -18,8 +19,8 @@ class ToggleButton extends React.Component {
 }
 
 ToggleButton.propTypes = {
-  onClick: React.PropTypes.func,
-  children: React.PropTypes.node
+  onClick: PropTypes.func,
+  children: PropTypes.node
 };
 
 ToggleButton.defaultProps = {

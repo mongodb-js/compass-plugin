@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const {{pascalcase name}}Actions = require('../actions');
 const ToggleButton = require('./toggle-button');
 
@@ -28,7 +29,7 @@ class {{pascalcase name}}Component extends React.Component {
 }
 
 {{pascalcase name}}Component.propTypes = {
-  status: React.PropTypes.oneOf(['enabled', 'disabled'])
+  status: PropTypes.oneOf(['enabled', 'disabled'])
 };
 
 {{pascalcase name}}Component.defaultProps = {
