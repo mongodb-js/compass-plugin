@@ -6,7 +6,7 @@ const React = require('react');
 
 const mount = require('enzyme').mount;
 
-const {{pascalcase name}}Component = require('../../lib/components/{{name}}');
+const {{pascalcase name}}Component = require('../../lib/components/{{slugcase name}}');
 const ToggleButton = require('../../lib/components/toggle-button');
 
 // use chai-enzyme assertions, see https://github.com/producthunt/chai-enzyme

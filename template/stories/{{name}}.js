@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import {{pascalcase name}}Component from '../src/components/{{name}}';
+import {{pascalcase name}}Component from '../src/components/{{slugcase name}}';
 import Connected{{pascalcase name}}Component from '../src/components/';
 
 storiesOf('{{pascalcase name}}Component', module)

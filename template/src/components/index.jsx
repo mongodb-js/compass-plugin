@@ -1,6 +1,6 @@
 const React = require('react');
 const { StoreConnector } = require('hadron-react-components');
-const {{pascalcase name}}Component = require('./{{name}}');
+const {{pascalcase name}}Component = require('./{{slugcase name}}');
 const Store = require('../stores');
 
 // const debug = require('debug')('mongodb-compass:{{slugcase name}}:index');
