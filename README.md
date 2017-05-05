@@ -20,9 +20,9 @@ khaos create mongodb-js/compass-plugin ./<mypackage>
 You are prompted to fill out some template variables:
 
 - `name`: short name of the package, e.g. `query-bar`, or `db-stats` (do not use spaces!)
+- `description`: a one sentence description of the package.
 - `role`: the role of the component. Use `Collection.Tab` for collection level scope (e.g. a view
   on the collection level), and `Instance.Tab` for global application scope. More on scopes TBD.
-- `description`: a one sentence description of the package.
 
 Once the plugin is created, install the dependencies with:
 
