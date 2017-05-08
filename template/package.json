@@ -64,6 +64,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1",
     "reflux": "^0.4.1",
     "reflux-state-mixin": "^0.7.0",
     "sinon": "^1.17.6",
