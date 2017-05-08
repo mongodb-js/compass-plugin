@@ -14,14 +14,15 @@ const ROLE = {
  * Activate all the components in the {{capitalcase name}} package.
  */
 function activate() {
-  // Register the {{pascalcase name}}Component as a collection tab Role in Compass
+  // Register the {{pascalcase name}}Component as a role in Compass
   //
-  // Note that available roles are:
-  //   - Collection.Tab
-  //   - CollectionStats.CollectionStatsItem
-  //   - Database.Tab
+  // Available roles are:
   //   - Instance.Tab
-  //
+  //   - Database.Tab
+  //   - Collection.Tab
+  //   - CollectionHUD.Item
+  //   - Header.Item
+
   global.hadronApp.appRegistry.registerRole('{{role}}', ROLE);
   global.hadronApp.appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
   global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);

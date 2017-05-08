@@ -12,7 +12,7 @@ class {{pascalcase name}}Component extends React.Component {
   }
 
   /**
-   * Render RefluxCapacitor.
+   * Render {{pascalcase name}} component.
    *
    * @returns {React.Component} The rendered component.
    */
