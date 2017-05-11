@@ -3,8 +3,6 @@ const PropTypes = require('prop-types');
 
 class ToggleButton extends React.Component {
 
-  static displayName = 'ToggleButton'
-
   static propTypes = {
     onClick: PropTypes.func,
     children: PropTypes.node

@@ -6,8 +6,6 @@ const ToggleButton = require('./toggle-button');
 
 class {{pascalcase name}}Component extends React.Component {
 
-  static displayName = '{{pascalcase name}}Component'
-
   static propTypes = {
     status: PropTypes.oneOf(['enabled', 'disabled'])
   }
