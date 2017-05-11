@@ -6,7 +6,17 @@ const ToggleButton = require('./toggle-button');
 
 class {{pascalcase name}}Component extends React.Component {
 
-  onClick() {
+  static displayName = '{{pascalcase name}}Component'
+
+  static propTypes = {
+    status: PropTypes.oneOf(['enabled', 'disabled'])
+  }
+
+  static defaultProps = {
+    status: 'enabled'
+  }
+
+  onToggle = () => {
     this.props.actions.toggleStatus();
   }
 
@@ -21,20 +31,10 @@ class {{pascalcase name}}Component extends React.Component {
         <h2 className="{{slugcase name}}-title">{{pascalcase name}}Component</h2>
         <p><i>{{description}}</i></p>
         <p>The current status is: <code>{this.props.status}</code></p>
-        <ToggleButton onClick={this.onClick} />
+        <ToggleButton onClick={this.onToggle}>Click to Toggle</ToggleButton>
       </div>
     );
   }
 }
-
-{{pascalcase name}}Component.propTypes = {
-  status: PropTypes.oneOf(['enabled', 'disabled'])
-};
-
-{{pascalcase name}}Component.defaultProps = {
-  status: 'enabled'
-};
-
-{{pascalcase name}}Component.displayName = '{{pascalcase name}}Component';
 
 module.exports = {{pascalcase name}}Component;

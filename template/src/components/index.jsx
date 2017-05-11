@@ -7,6 +7,9 @@ const Actions = require('../actions');
 // const debug = require('debug')('mongodb-compass:{{slugcase name}}:index');
 
 class Connected{{pascalcase name}}Component extends React.Component {
+
+  static displayName = 'Connected{{pascalcase name}}Component'
+
   /**
    * Connect {{pascalcase name}}Component to store and render.
    *
@@ -20,7 +23,5 @@ class Connected{{pascalcase name}}Component extends React.Component {
     );
   }
 }
-
-Connected{{pascalcase name}}Component.displayName = 'Connected{{pascalcase name}}Component';
 
 module.exports = Connected{{pascalcase name}}Component;

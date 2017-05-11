@@ -2,6 +2,14 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 class ToggleButton extends React.Component {
+
+  static displayName = 'ToggleButton'
+
+  static propTypes = {
+    onClick: PropTypes.func,
+    children: PropTypes.node
+  }
+
   /**
    * Render ToggleButton.
    *
@@ -17,16 +25,5 @@ class ToggleButton extends React.Component {
     );
   }
 }
-
-ToggleButton.propTypes = {
-  onClick: PropTypes.func,
-  children: PropTypes.node
-};
-
-ToggleButton.defaultProps = {
-  children: 'Toggle'
-};
-
-ToggleButton.displayName = 'ToggleButton';
 
 module.exports = ToggleButton;
