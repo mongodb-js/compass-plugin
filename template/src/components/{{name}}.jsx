@@ -1,6 +1,5 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const {{pascalcase name}}Actions = require('../actions');
 const ToggleButton = require('./toggle-button');
 
 // const debug = require('debug')('mongodb-compass:{{slugcase name}}');
@@ -8,7 +7,7 @@ const ToggleButton = require('./toggle-button');
 class {{pascalcase name}}Component extends React.Component {
 
   onClick() {
-    {{pascalcase name}}Actions.toggleStatus();
+    this.props.actions.toggleStatus();
   }
 
   /**
