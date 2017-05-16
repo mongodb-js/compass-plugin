@@ -17,22 +17,15 @@ const {{pascalcase name}}Component = require('../../lib/components');
 const {{pascalcase name}}Store = require('../../lib/stores');
 const {{pascalcase name}}Actions = require('../../lib/actions');
 
-const CONNECTION = new Connection({
-  hostname: '127.0.0.1',
-  port: 27018,
-  ns: '{{slugcase name}}',
-  mongodb_database_name: 'admin'
-});
+// const CONNECTION = new Connection({
+  // hostname: '127.0.0.1',
+  // port: 27018,
+  // ns: '{{slugcase name}}',
+  // mongodb_database_name: 'admin'
+// });
 
-DataServiceStore.listen((error, ds) => {
-  global.hadronApp.dataService = ds;
-  global.hadronApp.appRegistry.onActivated();
-  global.hadronApp.appRegistry.onConnected(error, ds);
-  ReactDOM.render(
-    React.createElement({{pascalcase name}}Component),
-    document.getElementById('container')
-  );
-});
+// DataServiceStore.listen((error, ds) => {
+// });
 
 global.hadronApp = app;
 global.hadronApp.appRegistry = new AppRegistry();
@@ -40,4 +33,13 @@ global.hadronApp.appRegistry.registerStore('App.CollectionStore', CollectionStor
 global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
 global.hadronApp.appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
 
-DataServiceActions.connect(CONNECTION);
+// global.hadronApp.dataService = ds;
+global.hadronApp.appRegistry.onActivated();
+// global.hadronApp.appRegistry.onConnected(error, ds);
+
+ReactDOM.render(
+  React.createElement({{pascalcase name}}Component),
+  document.getElementById('container')
+);
+
+// DataServiceActions.connect(CONNECTION);
