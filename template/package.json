@@ -8,6 +8,7 @@
     "ci": "npm run check && npm test",
     "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "check": "mongodb-js-precommit './src/**/*{.js,.jsx}' './test/**/*.js' index.js",
+    "precompile": "cp -r styles/fonts lib/styles/fonts",
     "compile": "npm run jsx && npm run less",
     "jsx": "babel ./src --out-dir ./lib --presets react",
     "preless": "lessc ./styles/compass/index.less ./lib/styles/compass/index.css",
