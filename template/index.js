@@ -13,7 +13,7 @@ const ROLE = {
 /**
  * Activate all the components in the {{capitalcase name}} package.
  */
-function activate() {
+function activate(appRegistry) {
   // Register the {{pascalcase name}}Component as a role in Compass
   //
   // Available roles are:
@@ -23,18 +23,18 @@ function activate() {
   //   - CollectionHUD.Item
   //   - Header.Item
 
-  global.hadronApp.appRegistry.registerRole('{{role}}', ROLE);
-  global.hadronApp.appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
-  global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
+  appRegistry.registerRole('{{role}}', ROLE);
+  appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
+  appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
 }
 
 /**
  * Deactivate all the components in the {{capitalcase name}} package.
  */
-function deactivate() {
-  global.hadronApp.appRegistry.deregisterRole('{{role}}', ROLE);
-  global.hadronApp.appRegistry.deregisterAction('{{pascalcase name}}.Actions');
-  global.hadronApp.appRegistry.deregisterStore('{{pascalcase name}}.Store');
+function deactivate(appRegistry) {
+  appRegistry.deregisterRole('{{role}}', ROLE);
+  appRegistry.deregisterAction('{{pascalcase name}}.Actions');
+  appRegistry.deregisterStore('{{pascalcase name}}.Store');
 }
 
 module.exports = {{pascalcase name}}Component;
