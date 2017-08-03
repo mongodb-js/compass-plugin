@@ -9,8 +9,6 @@ const DataService = require('mongodb-data-service');
 const Connection = require('mongodb-connection-model');
 
 const {{pascalcase name}}Component = require('../../lib/components');
-const {{pascalcase name}}Store = require('../../lib/stores');
-const {{pascalcase name}}Actions = require('../../lib/actions');
 
 // const CONNECTION = new Connection({
   // hostname: '127.0.0.1',
@@ -19,10 +17,12 @@ const {{pascalcase name}}Actions = require('../../lib/actions');
   // mongodb_database_name: 'admin'
 // });
 
+const entryPoint = require('../../');
+const appRegistry = new AppRegistry();
+
 global.hadronApp = app;
-global.hadronApp.appRegistry = new AppRegistry();
-global.hadronApp.appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
-global.hadronApp.appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
+global.hadronApp.appRegistry = appRegistry;
+entryPoint.activate(appRegistry);
 
 // const dataService = new DataService(CONNECTION);
 // dataService.onDataServiceInitialized(dataService);
