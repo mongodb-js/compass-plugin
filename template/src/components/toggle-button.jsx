@@ -1,7 +1,18 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class ToggleButton extends React.Component {
+class ToggleButton extends Component {
+  static propTypes = {
+    onClick: PropTypes.func,
+    children: PropTypes.node
+  };
+
+  static defaultProps = {
+    children: 'Toggle'
+  };
+
+  static displayName = 'ToggleButton';
+
   /**
    * Render ToggleButton.
    *
@@ -18,15 +29,5 @@ class ToggleButton extends React.Component {
   }
 }
 
-ToggleButton.propTypes = {
-  onClick: PropTypes.func,
-  children: PropTypes.node
-};
-
-ToggleButton.defaultProps = {
-  children: 'Toggle'
-};
-
-ToggleButton.displayName = 'ToggleButton';
-
-module.exports = ToggleButton;
+export default ToggleButton;
+export { ToggleButton };

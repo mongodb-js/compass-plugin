@@ -38,13 +38,55 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json', 'less'],
+    alias: {
+      actions: path.join(project.path.src, 'actions'),
+      components: path.join(project.path.src, 'components'),
+      fonts: path.join(project.path.src, 'assets/fonts'),
+      images: path.join(project.path.src, 'assets/images'),
+      less: path.join(project.path.src, 'assets/less'),
+      stores: path.join(project.path.src, 'stores')
+    }
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader'}, { loader: 'css-loader' }]
+        use: [
+          { loader: 'style-loader'},
+          { loader: 'css-loader' }
+        ]
+      },
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]_[local]---[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  project.plugin.autoprefixer
+                ];
+              }
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              noIeCompat: true
+            }
+          }
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -52,20 +94,22 @@ module.exports = {
         exclude: /(node_modules)/
       },
       {
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [{
-          loader: 'file-loader',
+          loader: 'url-loader',
           query: {
-            name: 'images/[name]__[hash:base64:5].[ext]'
+            limit: 8192,
+            name: 'assets/images/[name]__[hash:base64:5].[ext]'
           }
         }]
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: 'file-loader',
+          loader: 'url-loader',
           query: {
-            name: 'styles/fonts/[name]__[hash:base64:5].[ext]'
+            limit: 8192,
+            name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
           }
         }],
       }

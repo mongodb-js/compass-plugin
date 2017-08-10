@@ -1,11 +1,20 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const {{pascalcase name}}Actions = require('../actions');
-const ToggleButton = require('./toggle-button');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {{pascalcase name}}Actions from 'actions';
+import ToggleButton from './toggle-button';
 
 // const debug = require('debug')('mongodb-compass:{{slugcase name}}');
 
-class {{pascalcase name}}Component extends React.Component {
+class {{pascalcase name}}Component extends Component {
+  static propTypes = {
+    status: PropTypes.oneOf(['enabled', 'disabled'])
+  };
+
+  static defaultProps = {
+    status: 'enabled'
+  };
+
+  static displayName = '{{pascalcase name}}Component';
 
   onClick() {
     {{pascalcase name}}Actions.toggleStatus();
@@ -28,14 +37,4 @@ class {{pascalcase name}}Component extends React.Component {
   }
 }
 
-{{pascalcase name}}Component.propTypes = {
-  status: PropTypes.oneOf(['enabled', 'disabled'])
-};
-
-{{pascalcase name}}Component.defaultProps = {
-  status: 'enabled'
-};
-
-{{pascalcase name}}Component.displayName = '{{pascalcase name}}Component';
-
-module.exports = {{pascalcase name}}Component;
+export default {{pascalcase name}}Component;
