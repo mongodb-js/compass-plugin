@@ -1,7 +1,3 @@
-//require('./main'); //TODO: Old electron import remove after verifying this works
-
-'use strict';
-
 // Import parts of electron to use
 const {app, BrowserWindow} = require('electron');
 const path = require('path')
@@ -35,7 +31,7 @@ function createWindow() {
   } else {
     indexPath = url.format({
       protocol: 'file:',
-      pathname: path.join(__dirname, 'dist', 'index.html'),
+      pathname: path.join(__dirname, 'lib', 'index.html'),
       slashes: true
     });
   }

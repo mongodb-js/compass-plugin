@@ -32,6 +32,7 @@ module.exports = {
       fonts: path.join(project.path.src, 'assets/fonts'),
       images: path.join(project.path.src, 'assets/images'),
       less: path.join(project.path.src, 'assets/less'),
+      plugin: path.join(project.path.src, 'index.js'),
       stores: path.join(project.path.src, 'stores')
     }
   },

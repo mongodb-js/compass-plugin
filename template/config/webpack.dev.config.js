@@ -27,8 +27,8 @@ module.exports = {
       // only- means to only hot reload for successful updates
       'webpack/hot/only-dev-server',
 
-      // the entry point of our plugin
-      path.resolve(project.path.src, 'index.js')
+      // the entry point of our plugin for dev
+      path.resolve(project.path.electron, 'renderer/index.js')
     ]
   },
   output: {
@@ -45,6 +45,7 @@ module.exports = {
       fonts: path.join(project.path.src, 'assets/fonts'),
       images: path.join(project.path.src, 'assets/images'),
       less: path.join(project.path.src, 'assets/less'),
+      plugin: path.join(project.path.src, 'index.js'),
       stores: path.join(project.path.src, 'stores')
     }
   },

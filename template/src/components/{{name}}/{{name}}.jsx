@@ -27,7 +27,7 @@ class {{pascalcase name}} extends Component {
   render() {
     return (
       <div className="{{slugcase name}}">
-        <h2 className="{{slugcase name}}-title">{{pascalcase name}} Component</h2>
+        <h2 className="{{slugcase name}}-title">{{pascalcase name}} Plugin</h2>
         <p><i>{{description}}</i></p>
         <p>The current status is: <code>{this.props.status}</code></p>
         <ToggleButton onClick={this.onClick} />
