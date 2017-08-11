@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {{pascalcase name}}Actions from 'actions';
-import ToggleButton from './toggle-button';
 
-// const debug = require('debug')('mongodb-compass:{{slugcase name}}');
+import ToggleButton from 'components/toggleButton';
 
-class {{pascalcase name}}Component extends Component {
+class {{pascalcase name}} extends Component {
   static propTypes = {
+    actions: PropTypes.object.isRequired,
     status: PropTypes.oneOf(['enabled', 'disabled'])
   };
 
@@ -16,8 +15,8 @@ class {{pascalcase name}}Component extends Component {
 
   static displayName = '{{pascalcase name}}Component';
 
-  onClick() {
-    {{pascalcase name}}Actions.toggleStatus();
+  onClick = () => {
+    this.props.actions.toggleStatus();
   }
 
   /**
@@ -28,7 +27,7 @@ class {{pascalcase name}}Component extends Component {
   render() {
     return (
       <div className="{{slugcase name}}">
-        <h2 className="{{slugcase name}}-title">{{pascalcase name}}Component</h2>
+        <h2 className="{{slugcase name}}-title">{{pascalcase name}} Component</h2>
         <p><i>{{description}}</i></p>
         <p>The current status is: <code>{this.props.status}</code></p>
         <ToggleButton onClick={this.onClick} />
@@ -37,4 +36,5 @@ class {{pascalcase name}}Component extends Component {
   }
 }
 
-export default {{pascalcase name}}Component;
+export default {{pascalcase name}};
+export { {{pascalcase name}} };

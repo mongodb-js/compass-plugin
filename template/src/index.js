@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import {{pascalcase name}}Component from './components';
+import Plugin from './Plugin';
 
 //TODO: Move logic from electron/renderer/index.js to this file (AppRegistry)
 
@@ -22,7 +22,7 @@ const render = Component => {
 }
 
 // Render our plugin
-render( {{pascalcase name}}Component );
+render( Plugin );
 
 if (module.hot) {
     /**
@@ -39,9 +39,9 @@ if (module.hot) {
         }
     };
 
-    module.hot.accept('./components', () => {
+    module.hot.accept('./Plugin', () => {
         // Because Webpack 2 has built-in support for ES2015 modules,
         // you won't need to re-require your app root in module.hot.accept
-        render( {{pascalcase name}}Component );
+        render( Plugin );
     });
 }
