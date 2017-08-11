@@ -21,7 +21,7 @@ module.exports = {
   output: {
     path: project.path.output,
     publicPath: './',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   resolve: {
     modules: ['node_modules'],
@@ -107,9 +107,6 @@ module.exports = {
   plugins: [
     // Do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin(),
-
-    // Creates HTML page for us at build time
-    new HtmlWebpackPlugin(),
 
     // Extract the dependent compoent styles into a single CSS file to avoid FOUC (flash of unstyled content)
     new ExtractTextPlugin({

@@ -3,5 +3,8 @@
   	"react",
   	['es2015', {'modules': false}]
   ],
-  "plugins": ["transform-class-properties"]
+  "plugins": [
+  	"react-hot-loader/babel",
+  	"transform-class-properties"
+  ]
 }

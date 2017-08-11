@@ -34,7 +34,7 @@ module.exports = {
   output: {
     path: project.path.output,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   resolve: {
     modules: ['node_modules'],
