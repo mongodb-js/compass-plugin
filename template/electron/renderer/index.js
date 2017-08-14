@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import app from 'hadron-app';
 import AppRegistry from 'hadron-app-registry';
 import { AppContainer } from 'react-hot-loader';
-import Plugin, { activate } from 'plugin';
+import {{pascalcase name}}Plugin, { activate } from 'plugin';
 
 const appRegistry = new AppRegistry();
 
 global.hadronApp = app;
 global.hadronApp.appRegistry = appRegistry;
+
+// Activste our plugin with the Hadron App Regustry
 activate(appRegistry);
 
 // Since we are using HtmlWebpackPlugin WITHOUT a template,
@@ -28,7 +30,7 @@ const render = Component => {
 }
 
 // Render our plugin
-render( Plugin );
+render( {{pascalcase name}}Plugin );
 
 if (module.hot) {
     /**
@@ -48,6 +50,6 @@ if (module.hot) {
     module.hot.accept('plugin', () => {
         // Because Webpack 2 has built-in support for ES2015 modules,
         // you won't need to re-require your app root in module.hot.accept
-        render( Plugin );
+        render( {{pascalcase name}}Plugin );
     });
 }

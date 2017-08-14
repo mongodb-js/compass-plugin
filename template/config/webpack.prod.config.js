@@ -21,7 +21,10 @@ module.exports = {
   output: {
     path: project.path.output,
     publicPath: './',
-    filename: '[name].js'
+    filename: '[name].js',
+    // Export our plugin as a UMD library (compatible with all module definitions - CommonJS, AMD and global variable)
+    library: '{{pascalcase name}}Plugin',
+    libraryTarget: 'umd'
   },
   resolve: {
     modules: ['node_modules'],
