@@ -41,45 +41,84 @@ module.exports = {
   },
   module: {
     rules: [
+      // TODO: Extract to external CSS file when compass is configured to pull in plugin css files as well
+      // {
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: 'css-loader'
+      //   })
+      // },
+      // {
+      //   test: /\.less$/,
+      //   exclude: /node_modules/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: [
+      //       {
+      //         loader: 'css-loader',
+      //         options: {
+      //           modules: true,
+      //           importLoaders: 1,
+      //           localIdentName: '[hash:base64:5]'
+      //         }
+      //       },
+      //       {
+      //         loader: 'postcss-loader',
+      //         options: {
+      //           plugins: function () {
+      //             return [
+      //               project.plugin.autoprefixer
+      //             ];
+      //           }
+      //         }
+      //       },
+      //       {
+      //         loader: 'less-loader',
+      //         options: {
+      //           noIeCompat: true
+      //         }
+      //       }
+      //     ]
+      //   })
+      // },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        use: [
+          { loader: 'style-loader'},
+          { loader: 'css-loader' }
+        ]
       },
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
-                localIdentName: '[hash:base64:5]'
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: function () {
-                  return [
-                    project.plugin.autoprefixer
-                  ];
-                }
-              }
-            },
-            {
-              loader: 'less-loader',
-              options: {
-                noIeCompat: true
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '{{pascalcase name}}__[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  project.plugin.autoprefixer
+                ];
               }
             }
-          ]
-        })
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              noIeCompat: true
+            }
+          }
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -112,12 +151,13 @@ module.exports = {
     // Do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin(),
 
+    // TODO: Extract to external CSS file when compass is configured to pull in plugin css files as well
     // Extract the dependent compoent styles into a single CSS file to avoid FOUC (flash of unstyled content)
-    new ExtractTextPlugin({
-        filename: 'assets/css/index.css',
-        allChunks: true,
-        ignoreOrder: false // TODO: ignoreOrder: true when using CSS Modules
-    }),
+    // new ExtractTextPlugin({
+    //     filename: 'assets/css/index.css',
+    //     allChunks: true,
+    //     ignoreOrder: true // When using CSS modules import order of CSS no longer needs to be preserved
+    // }),
 
     // Defines global variables
     new webpack.DefinePlugin(GLOBALS),

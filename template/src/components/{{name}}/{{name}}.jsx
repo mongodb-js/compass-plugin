@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import classnames from 'classnames';
 import ToggleButton from 'components/toggleButton';
+
+import styles from './{{name}}.less';
 
 class {{pascalcase name}} extends Component {
   static propTypes = {
@@ -26,9 +28,9 @@ class {{pascalcase name}} extends Component {
    */
   render() {
     return (
-      <div className="{{slugcase name}}">
-        <h2 className="{{slugcase name}}-title">{{pascalcase name}} Plugin</h2>
-        <p><i>{{description}}</i></p>
+      <div className={classnames(styles.root)}>
+        <h2 className={classnames(styles.title)}>{{pascalcase name}} Plugin</h2>
+        <p>{{description}}</p>
         <p>The current status is: <code>{this.props.status}</code></p>
         <ToggleButton onClick={this.onClick} />
       </div>
