@@ -6,7 +6,7 @@ import actions from 'actions';
 
 // Conditionally require the global less file only if we are developing,
 // as prod builds are consumed by compass which will provide a single globals CSS file.
-if(process.env.NODE_ENV !== 'production') {
+if(process.env.NODE_ENV === 'development') {
   require('less/index.less');
 }
 
