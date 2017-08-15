@@ -7,6 +7,7 @@
   "scripts": {
     "compile": "webpack --config ./config/webpack.prod.config.js",
     "start": "webpack-dev-server --config ./config/webpack.dev.config.js",
+    "start:watch": "webpack --config ./config/webpack.watch.config.js",
     "start:prod": "npm run compile && electron --noDevServer ./electron",
     "test": "cross-env NODE_ENV=test mocha-webpack \"./src/**/*.spec.js\"",
     "test:watch": "cross-env NODE_ENV=test mocha-webpack \"./src/**/*.spec.js\" --watch",
