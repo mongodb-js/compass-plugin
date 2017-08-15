@@ -4,9 +4,10 @@ import {{pascalcase name}} from 'components/{{name}}';
 import store from 'stores';
 import actions from 'actions';
 
-// Conditionally require the global less file only if we are developing,
-// as prod builds are consumed by compass which will provide a single globals CSS file.
-if(process.env.NODE_ENV === 'development') {
+// Import global less file. Note: these styles WILL NOT be used in compass, as compass provides its own set
+// of global styles. If you are wishing to style a given component, you should be writing a less file per
+// component as per the CSS Modules ICSS spec. @see components/ToggleButton for an example.
+if(process.env.NODE_ENV !== 'test') {
   require('less/index.less');
 }
 
