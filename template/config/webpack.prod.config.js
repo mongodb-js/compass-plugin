@@ -16,6 +16,7 @@ const GLOBALS = {
 module.exports = {
   target: 'electron-renderer',
   entry: {
+    electron: path.resolve(project.path.electron, 'renderer/index.js'),
     index: path.resolve(project.path.src, 'index.js')
   },
   output: {
@@ -161,6 +162,9 @@ module.exports = {
 
     // Defines global variables
     new webpack.DefinePlugin(GLOBALS),
+
+    // Creates HTML page for us at build time
+    new HtmlWebpackPlugin(),
 
     // An ES6+ aware minifier, results in smaller output compared to UglifyJS given that 
     // Chromium in electron supports the majority of ES6 features out of the box.

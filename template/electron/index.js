@@ -31,7 +31,7 @@ function createWindow() {
   } else {
     indexPath = url.format({
       protocol: 'file:',
-      pathname: path.join(__dirname, 'lib', 'index.html'),
+      pathname: path.join(__dirname, '/../lib', 'index.html'),
       slashes: true
     });
   }
