@@ -38,7 +38,7 @@ const {{pascalcase name}}Store = Reflux.createStore({
    *
    * @param {Object} appRegistry   app registry containing all stores and components
    */
-  onActivated(appRegistry) {
+  onActivated() {
   },
 
   /**
@@ -55,7 +55,7 @@ const {{pascalcase name}}Store = Reflux.createStore({
    * @param {Object} dataService   the dataService object if connection was successful
    *
    */
-  onConnected(error, dataService) {
+  onConnected() {
   },
 
   /**

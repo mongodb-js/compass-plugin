@@ -6,6 +6,8 @@ import ToggleButton from 'components/toggleButton';
 import styles from './{{name}}.less';
 
 class {{pascalcase name}} extends Component {
+  static displayName = '{{pascalcase name}}Component';
+
   static propTypes = {
     actions: PropTypes.object.isRequired,
     status: PropTypes.oneOf(['enabled', 'disabled'])
@@ -14,8 +16,6 @@ class {{pascalcase name}} extends Component {
   static defaultProps = {
     status: 'enabled'
   };
-
-  static displayName = '{{pascalcase name}}Component';
 
   onClick = () => {
     this.props.actions.toggleStatus();

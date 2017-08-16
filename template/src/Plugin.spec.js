@@ -5,17 +5,14 @@ import {{pascalcase name}}Plugin from './Plugin';
 
 describe('{{pascalcase name}} [Plugin]', () => {
   let component;
-  let actions;
 
   beforeEach((done) => {
-    actions = { toggleStatus: sinon.stub() };
     component = mount(<{{pascalcase name}}Plugin />);
     done();
   });
 
   afterEach((done) => {
     component = null;
-    actions = null;
     done();
   });
 

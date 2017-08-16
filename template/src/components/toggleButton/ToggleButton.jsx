@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import styles from './ToggleButton.less';
 
 class ToggleButton extends Component {
+  static displayName = 'ToggleButton';
+
   static propTypes = {
     onClick: PropTypes.func,
     children: PropTypes.node
@@ -13,8 +15,6 @@ class ToggleButton extends Component {
   static defaultProps = {
     children: 'Toggle Status'
   };
-
-  static displayName = 'ToggleButton';
 
   /**
    * Render ToggleButton.

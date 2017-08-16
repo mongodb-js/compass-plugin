@@ -21,7 +21,7 @@ describe('{{pascalcase name}} [Component]', () => {
     done();
   });
 
-  it('renders the correct root classname', () => {      
+  it('renders the correct root classname', () => {
     expect(component.find(`.${styles.root}`)).to.have.length(1);
   });
 

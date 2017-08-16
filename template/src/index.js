@@ -12,7 +12,8 @@ const ROLE = {
 
 /**
  * Activate all the components in the {{capitalcase name}} package.
- */
+ * @param {Object} appRegistry - The Hadron appRegisrty to activate this plugin with.
+ **/
 function activate(appRegistry) {
   // Register the {{pascalcase name}}Plugin as a role in Compass
   //
@@ -30,7 +31,8 @@ function activate(appRegistry) {
 
 /**
  * Deactivate all the components in the {{capitalcase name}} package.
- */
+ * @param {Object} appRegistry - The Hadron appRegisrty to deactivate this plugin with.
+ **/
 function deactivate(appRegistry) {
   appRegistry.deregisterRole('{{role}}', ROLE);
   appRegistry.deregisterAction('{{pascalcase name}}.Actions');
