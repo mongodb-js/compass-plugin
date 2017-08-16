@@ -18,16 +18,15 @@
     "link-plugin": "./scripts/link.sh",
     "unlink-plugin": "./scripts/unlink.sh",
     "prepublish": "npm run compile",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "precommit": [
     "check"
   ],
   "license": "Apache-2.0",
   "devDependencies": {
+    "@storybook/react": "^3.2.0",
     "autoprefixer": "^7.1.2",
-    "@kadira/react-storybook-addon-info": "^3.2.1",
-    "@kadira/storybook": "^2.3.0",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.1.1",
@@ -72,6 +71,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "3.0.0-beta.7",
+    "react-storybook-addon-chapters": "^1.1.0",
     "react-test-renderer": "^15.6.1",
     "reflux": "^0.4.1",
     "reflux-state-mixin": "^0.7.0",

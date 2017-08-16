@@ -25,11 +25,13 @@ module.exports = {
     alias: {
       actions: path.join(project.path.src, 'actions'),
       components: path.join(project.path.src, 'components'),
+      constants: path.join(project.path.src, 'constants'),
       fonts: path.join(project.path.src, 'assets/fonts'),
       images: path.join(project.path.src, 'assets/images'),
       less: path.join(project.path.src, 'assets/less'),
       plugin: path.join(project.path.src, 'index.js'),
-      stores: path.join(project.path.src, 'stores')
+      stores: path.join(project.path.src, 'stores'),
+      storybook: project.path.storybook
     }
   },
   module: {
