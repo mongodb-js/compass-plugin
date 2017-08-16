@@ -10,7 +10,7 @@ const appRegistry = new AppRegistry();
 global.hadronApp = app;
 global.hadronApp.appRegistry = appRegistry;
 
-// Activste our plugin with the Hadron App Regustry
+// Activate our plugin with the Hadron App Registry
 activate(appRegistry);
 
 // Since we are using HtmlWebpackPlugin WITHOUT a template,
