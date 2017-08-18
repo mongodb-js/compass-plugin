@@ -61,7 +61,7 @@ module.exports = {
               options: {
                 modules: true,
                 importLoaders: 1,
-                localIdentName: '{{pascalcase name}}__[hash:base64:5]'
+                localIdentName: '{{pascalcase name}}_[hash:base64:5]'
               }
             },
             {
