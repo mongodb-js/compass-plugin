@@ -70,7 +70,7 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: '{{pascalcase name}}__[name]_[local]__[hash:base64:5]'
+              localIdentName: '{{pascalcase name}}_[name]-[local]__[hash:base64:5]'
             }
           },
           {
