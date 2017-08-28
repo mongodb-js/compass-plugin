@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BabiliPlugin = require('babili-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 const project = require('./project');
 
@@ -154,6 +155,10 @@ module.exports = {
     ]
   },
   plugins: [
+    // Auto-create webpack externals for any dependency listed as a peerDependency in package.json
+    // so that the external vendor JavaScript is not part of our compiled bundle
+    new PeerDepsExternalsPlugin(),
+
     // Do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin(),
 
@@ -172,7 +177,7 @@ module.exports = {
 
     // An ES6+ aware minifier, results in smaller output compared to UglifyJS given that 
     // Chromium in electron supports the majority of ES6 features out of the box.
-    new BabiliPlugin()
+    new MinifyPlugin()
   ],
   stats: {
     colors: true,
