@@ -46,9 +46,11 @@ module.exports = {
       fonts: path.join(project.path.src, 'assets/fonts'),
       images: path.join(project.path.src, 'assets/images'),
       less: path.join(project.path.src, 'assets/less'),
+      models: path.join(project.path.src, 'models'),
       plugin: path.join(project.path.src, 'index.js'),
       stores: path.join(project.path.src, 'stores'),
-      storybook: project.path.storybook
+      storybook: project.path.storybook,
+      utils: path.join(project.path.src, 'utils')
     }
   },
   module: {

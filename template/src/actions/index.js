@@ -1,10 +1,4 @@
-const Reflux = require('reflux');
+import {{pascalcase name}}Actions from './Actions';
 
-const {{pascalcase name}}Actions = Reflux.createActions([
-  /**
-   * define your actions as strings below, for example:
-   */
-  'toggleStatus'
-]);
-
-module.exports = {{pascalcase name}}Actions;
+export default {{pascalcase name}}Actions;
+export { {{pascalcase name}}Actions };
