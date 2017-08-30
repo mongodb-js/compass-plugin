@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import styles from './ToggleButton.less';
+import styles from './toggle-button.less';
 
 class ToggleButton extends Component {
   static displayName = 'ToggleButton';

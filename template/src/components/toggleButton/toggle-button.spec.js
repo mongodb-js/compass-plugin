@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import ToggleButton from 'components/toggleButton';
-import styles from './ToggleButton.less';
+import styles from './toggle-button.less';
 
 describe('ToggleButton [Component]', () => {
   let component;
