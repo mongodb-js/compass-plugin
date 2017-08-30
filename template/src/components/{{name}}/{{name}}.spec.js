@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import {{pascalcase name}} from 'components/{{name}}';
-import ToggleButton from 'components/toggleButton';
+import ToggleButton from 'components/toggle-button';
 import styles from './{{name}}.less';
 
 describe('{{pascalcase name}} [Component]', () => {

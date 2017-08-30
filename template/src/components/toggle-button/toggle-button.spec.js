@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ToggleButton from 'components/toggleButton';
+import ToggleButton from 'components/toggle-button';
 import styles from './toggle-button.less';
 
 describe('ToggleButton [Component]', () => {
