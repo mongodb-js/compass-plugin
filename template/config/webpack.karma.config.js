@@ -1,29 +1,23 @@
 const webpack = require('webpack');
 const path = require('path');
-
 const project = require('./project');
 
 const GLOBALS = {
     'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('test')
     },
     __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
 };
 
 module.exports = {
-  target: 'electron-renderer',
-  watch: true,
-  entry: {
-    // Export the entry to our plugin. Referenced in package.json main.
-    index: path.resolve(project.path.src, 'index.js')
-  },
-  output: {
-    path: project.path.output,
-    publicPath: '/',
-    filename: '[name].js',
-    // Export our plugin as a UMD library (compatible with all module definitions - CommonJS, AMD and global variable)
-    library: '{{pascalcase name}}Plugin',
-    libraryTarget: 'umd'
+  target: 'electron-renderer', // webpack should compile node compatible code for tests
+  stats: 'errors-only',
+  externals: {
+    'jsdom': 'window',
+    'react/addons': 'react',
+    'react/lib/ExecutionEnvironment': 'react',
+    'react/lib/ReactContext': 'react',
+    'react-addons-test-utils': 'react-dom',
   },
   resolve: {
     modules: ['node_modules'],
@@ -61,7 +55,7 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: '{{pascalcase name}}_[name]-[local]__[hash:base64:5]'
+              localIdentName: 'QueryHistory_[name]-[local]__[hash:base64:5]'
             }
           },
           {
@@ -83,6 +77,10 @@ module.exports = {
         ]
       },
       {
+        test: /node_modules\/JSONStream\/index\.js$/,
+        use: [{ loader: 'shebang-loader' }]
+      },
+      {
         test: /\.(js|jsx)$/,
         use: [{ loader: 'babel-loader' }],
         exclude: /(node_modules)/
@@ -90,7 +88,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'ignore-loader',
           query: {
             limit: 8192,
             name: 'assets/images/[name]__[hash:base64:5].[ext]'
@@ -100,7 +98,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'ignore-loader',
           query: {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
@@ -108,22 +106,5 @@ module.exports = {
         }],
       }
     ]
-  },
-  plugins: [
-    // Prints more readable module names in the browser console on HMR updates
-    new webpack.NamedModulesPlugin(),
-
-    // Do not emit compiled assets that include errors
-    new webpack.NoEmitOnErrorsPlugin(),
-
-    // Defines global variables
-    new webpack.DefinePlugin(GLOBALS)
-  ],
-  devtool: 'cheap-source-map',
-  stats: {
-    colors: true,
-    children: false,
-    chunks: false,
-    modules: false
   }
 };

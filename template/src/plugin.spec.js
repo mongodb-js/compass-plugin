@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { StoreConnector } from 'hadron-react-components';
-import {{pascalcase name}}Plugin from './Plugin';
+import {{pascalcase name}}Plugin from './plugin';
 
 describe('{{pascalcase name}} [Plugin]', () => {
   let component;

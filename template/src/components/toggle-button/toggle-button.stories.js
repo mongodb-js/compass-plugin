@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ComponentPreview from 'storybook/decorators/componentPreview';
 import { withChaptersOptions } from 'constants/storybook';
-import { ToggleButton } from 'components/toggleButton';
+import { ToggleButton } from 'components/toggle-button';
 
 storiesOf('ToggleButton', module)
   .addWithChapters('Example Title', {

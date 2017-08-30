@@ -1,4 +1,4 @@
-import {{pascalcase name}}Plugin from './Plugin';
+import {{pascalcase name}}Plugin from './plugin';
 import {{pascalcase name}}Actions from 'actions';
 import {{pascalcase name}}Store from 'stores';
 
