@@ -17,7 +17,7 @@
     "ci": "npm run check && npm test",
     "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "precheck": "npm run compile",
-    "check": "mongodb-js-precommit './src/**/*{.js,.jsx}' './test/**/*.js'",
+    "check": "mongodb-js-precommit './src/**/*{.js,.jsx}' './test/**/*.js' './electron/**/*.js'",
     "link-plugin": "./scripts/link.sh",
     "unlink-plugin": "./scripts/unlink.sh",
     "prepublish": "npm run compile",
