@@ -116,7 +116,7 @@ module.exports = {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
           }
-        }],
+        }]
       }
     ]
   },
