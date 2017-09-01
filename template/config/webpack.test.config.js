@@ -1,17 +1,7 @@
-const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { spawn } = require('child_process');
 
 const project = require('./project');
-
-const GLOBALS = {
-    'process.env': {
-        'NODE_ENV': JSON.stringify('test')
-    },
-    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
-};
 
 module.exports = {
   target: 'node', // webpack should compile node compatible code for tests
@@ -61,7 +51,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins: function() {
                 return [
                   project.plugin.autoprefixer
                 ];
@@ -82,20 +72,20 @@ module.exports = {
         exclude: /(node_modules)/
       },
       {
-          test: /\.(js|jsx)/,
-          enforce: 'post', // Enforce as a post step so babel can do its compliation prior to instrumenting code
-          exclude: [
-              /node_modules/,
-              /constants/,
-              /.*?(?=\.spec).*?\.js/
-          ],
-          include: project.path.src,
-          use: {
-              loader: 'istanbul-instrumenter-loader',
-              options: {
-                  esModules: true
-              }
+        test: /\.(js|jsx)/,
+        enforce: 'post', // Enforce as a post step so babel can do its compilation prior to instrumenting code
+        exclude: [
+          /node_modules/,
+          /constants/,
+          /.*?(?=\.spec).*?\.js/
+        ],
+        include: project.path.src,
+        use: {
+          loader: 'istanbul-instrumenter-loader',
+          options: {
+            esModules: true
           }
+        }
       }
     ]
   }

@@ -1,13 +1,5 @@
-const webpack = require('webpack');
 const path = require('path');
 const project = require('./project');
-
-const GLOBALS = {
-    'process.env': {
-        'NODE_ENV': JSON.stringify('test')
-    },
-    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
-};
 
 module.exports = {
   target: 'electron-renderer', // webpack should compile node compatible code for tests
@@ -17,7 +9,7 @@ module.exports = {
     'react/addons': 'react',
     'react/lib/ExecutionEnvironment': 'react',
     'react/lib/ReactContext': 'react',
-    'react-addons-test-utils': 'react-dom',
+    'react-addons-test-utils': 'react-dom'
   },
   resolve: {
     modules: ['node_modules'],
@@ -61,7 +53,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins: function() {
                 return [
                   project.plugin.autoprefixer
                 ];
@@ -103,7 +95,7 @@ module.exports = {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
           }
-        }],
+        }]
       }
     ]
   }

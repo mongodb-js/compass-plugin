@@ -4,10 +4,10 @@ const path = require('path');
 const project = require('./project');
 
 const GLOBALS = {
-    'process.env': {
-        'NODE_ENV': JSON.stringify('development')
-    },
-    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
+  'process.env': {
+    'NODE_ENV': JSON.stringify('development')
+  },
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
 };
 
 module.exports = {
@@ -105,7 +105,7 @@ module.exports = {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
           }
-        }],
+        }]
       }
     ]
   },

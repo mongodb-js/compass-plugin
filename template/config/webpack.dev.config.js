@@ -6,10 +6,10 @@ const { spawn } = require('child_process');
 const project = require('./project');
 
 const GLOBALS = {
-    'process.env': {
-        'NODE_ENV': JSON.stringify('development')
-    },
-    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
+  'process.env': {
+    'NODE_ENV': JSON.stringify('development')
+  },
+  __DEV__: JSON.stringify(JSON.parse('true'))
 };
 
 module.exports = {
@@ -78,7 +78,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins: function() {
                 return [
                   project.plugin.autoprefixer
                 ];
@@ -116,7 +116,7 @@ module.exports = {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
           }
-        }],
+        }]
       }
     ]
   },
@@ -148,7 +148,7 @@ module.exports = {
     },
     setup() {
       spawn('electron', [project.path.electron], { shell: true, env: process.env, stdio: 'inherit' })
-        .on('close', code => process.exit(0))
+        .on('close', () => process.exit(0))
         .on('error', spawnError => console.error(spawnError));
     }
   }
