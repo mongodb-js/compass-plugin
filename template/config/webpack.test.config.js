@@ -73,7 +73,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)/,
-        enforce: 'post', // Enforce as a post step so babel can do its compliation prior to instrumenting code
+        enforce: 'post', // Enforce as a post step so babel can do its compilation prior to instrumenting code
         exclude: [
           /node_modules/,
           /constants/,
