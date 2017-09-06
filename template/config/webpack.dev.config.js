@@ -149,7 +149,7 @@ module.exports = {
     setup() {
       spawn('electron', [project.path.electron], { shell: true, env: process.env, stdio: 'inherit' })
         .on('close', () => process.exit(0))
-        .on('error', spawnError => console.error(spawnError));
+        .on('error', spawnError => console.error(spawnError)); // eslint-disable-line no-console
     }
   }
 };
