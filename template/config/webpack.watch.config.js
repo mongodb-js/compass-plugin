@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 const project = require('./project');
 
@@ -67,7 +68,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
+              plugins: function() {
                 return [
                   project.plugin.autoprefixer
                 ];
