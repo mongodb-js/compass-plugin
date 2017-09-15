@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ToggleButton from 'components/toggle-button';
 
-import styles from './{{name}}.less';
+import styles from './{{slugcase name}}.less';
 
 class {{pascalcase name}} extends Component {
   static displayName = '{{pascalcase name}}Component';

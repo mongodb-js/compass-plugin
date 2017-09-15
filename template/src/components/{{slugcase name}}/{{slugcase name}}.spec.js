@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import {{pascalcase name}} from 'components/{{name}}';
+import {{pascalcase name}} from 'components/{{slugcase name}}';
 import ToggleButton from 'components/toggle-button';
-import styles from './{{name}}.less';
+import styles from './{{slugcase name}}.less';
 
 describe('{{pascalcase name}} [Component]', () => {
   let component;

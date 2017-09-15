@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import ComponentPreview from 'storybook/decorators/componentPreview';
 import { withChaptersOptions } from 'constants/storybook';
 
-import {{pascalcase name}} from 'components/{{name}}';
+import {{pascalcase name}} from 'components/{{slugcase name}}';
 
 storiesOf('{{pascalcase name}}', module)
   .addWithChapters('Example Title', {
