@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StoreConnector } from 'hadron-react-components';
-import {{pascalcase name}} from 'components/{{slugcase name}}';
+import {{pascalcase name}} from 'components/{{name}}';
 import store from 'stores';
 import actions from 'actions';
 

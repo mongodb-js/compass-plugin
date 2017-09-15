@@ -1,4 +1,4 @@
-import {{pascalcase name}} from './{{slugcase name}}';
+import {{pascalcase name}} from './{{name}}';
 
 export default {{pascalcase name}};
 export { {{pascalcase name}} };
