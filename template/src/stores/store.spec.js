@@ -1,21 +1,21 @@
 import Store from 'stores';
 
 describe('{{pascalcase name}}Store [Store]', () => {
-  beforeEach(function() {
-    Store.setState( Store.getInitialState() );
+  beforeEach(() => {
+    Store.setState(Store.getInitialState());
   });
 
-  it('should have an initial state of {status: \'enabled\'}', function() {
+  it('should have an initial state of {status: \'enabled\'}', () => {
     expect(Store.state.status).to.be.equal('enabled');
   });
 
-  describe('toggleStatus()', function() {
-    it('should switch the state to {status: \'disabled\'}', function() {
+  describe('toggleStatus()', () => {
+    it('should switch the state to {status: \'disabled\'}', () => {
       Store.toggleStatus();
       expect(Store.state.status).to.be.equal('disabled');
     });
 
-    it('should switch the state back to {status: \'enabled\'} when used a second time', function() {
+    it('should switch the state back to {status: \'enabled\'} when used a second time', () => {
       Store.toggleStatus();
       Store.toggleStatus();
       expect(Store.state.status).to.be.equal('enabled');

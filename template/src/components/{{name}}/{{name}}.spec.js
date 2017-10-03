@@ -25,15 +25,15 @@ describe('{{pascalcase name}} [Component]', () => {
     expect(component.find(`.${styles.root}`)).to.have.length(1);
   });
 
-  it('should contain one <h2> tag', function() {
+  it('should contain one <h2> tag', () => {
     expect(component.find('h2')).to.have.length(1);
   });
 
-  it('should contain one <ToggleButton />', function() {
+  it('should contain one <ToggleButton />', () => {
     expect(component.find(ToggleButton)).to.have.length(1);
   });
 
-  it('should initially have prop {status: \'enabled\'}', function() {
+  it('should initially have prop {status: \'enabled\'}', () => {
     expect(component.prop('status')).to.equal('enabled');
   });
 });

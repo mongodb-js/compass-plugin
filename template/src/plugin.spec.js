@@ -16,7 +16,7 @@ describe('{{pascalcase name}} [Plugin]', () => {
     done();
   });
 
-  it('should contain a <StoreConnector /> with a store prop', function() {
+  it('should contain a <StoreConnector /> with a store prop', () => {
     expect(component.find(StoreConnector).first().props('store')).to.be.an('object');
   });
 });

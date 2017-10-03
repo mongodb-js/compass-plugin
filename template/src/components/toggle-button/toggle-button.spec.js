@@ -23,11 +23,11 @@ describe('ToggleButton [Component]', () => {
     expect(component.find(`.${styles['button--animateFromTop']}`)).to.have.length(1);
   });
 
-  it('should contain one <span> tag', function() {
+  it('should contain one <span> tag', () => {
     expect(component.find('span')).to.have.length(1);
   });
 
-  it('should have the correct button text', function() {
+  it('should have the correct button text', () => {
     expect(component.text()).to.equal('Test');
   });
 });
