@@ -36,26 +36,16 @@ const {{pascalcase name}}Store = Reflux.createStore({
    *
    * If this plugin does not depend on other stores, you can delete the method.
    *
-   * @param {Object} appRegistry   app registry containing all stores and components
+   * @param {Object} appRegistry - app registry containing all stores and components
    */
-  onActivated() {
-  },
-
-  /**
-   * This method is called when the data service is finished connecting. You
-   * receive either an error or the connected data service object, and if the
-   * connection was successful you can now make calls to the database, e.g.
-   *
-   * dataService.command('admin', {connectionStatus: 1}, this.handleStatus.bind(this));
-   *
-   * If this plugin does not need to talk to the database, you can delete this
-   * method.
-   *
-   * @param {Object} error         the error object if connection was unsuccessful
-   * @param {Object} dataService   the dataService object if connection was successful
-   *
-   */
-  onConnected() {
+  onActivated(appRegistry) {
+    // Events emitted from the app registry:
+    // appRegistry.on('application-intialized', (version) => return true);
+    // appRegistry.on('data-service-intialized', (dataService) => return true);
+    // appRegistry.on('data-service-connected', (error, dataService) => return true);
+    // appRegistry.on('collection-changed', (namespace) => return true);
+    // appRegistry.on('database-changed', (namespace) => return true);
+    // appRegistry.on('query-applied', (queryState) => return true);
   },
 
   /**
