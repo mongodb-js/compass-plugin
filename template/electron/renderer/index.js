@@ -22,7 +22,7 @@ activate(appRegistry);
 // we should create our own root node in the body element before rendering into it.
 const root = document.createElement('div');
 root.id = 'root';
-document.body.appendChild( root );
+document.body.appendChild(root);
 
 // Create a HMR enabled render function
 const render = Component => {
@@ -35,7 +35,7 @@ const render = Component => {
 };
 
 // Render our plugin
-render( {{pascalcase name}}Plugin );
+render({{pascalcase name}}Plugin);
 
 if (module.hot) {
   /**
@@ -55,6 +55,6 @@ if (module.hot) {
   module.hot.accept('plugin', () => {
     // Because Webpack 2 has built-in support for ES2015 modules,
     // you won't need to re-require your app root in module.hot.accept
-    render( {{pascalcase name}}Plugin );
+    render({{pascalcase name}}Plugin);
   });
 }

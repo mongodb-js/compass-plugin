@@ -22,7 +22,7 @@ describe('{{pascalcase name}} [Component]', () => {
   });
 
   it('renders the correct root classname', () => {
-    expect(component.find(`.${styles.root}`)).to.have.length(1);
+    expect(component.find(`.${styles.root}`)).to.be.present();
   });
 
   it('should contain one <h2> tag', () => {
