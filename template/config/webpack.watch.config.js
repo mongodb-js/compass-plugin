@@ -13,6 +13,7 @@ const GLOBALS = {
 
 module.exports = {
   target: 'electron-renderer',
+  devtool: 'eval-source-map',
   watch: true,
   entry: {
     // Export the entry to our plugin. Referenced in package.json main.
@@ -23,7 +24,7 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js',
     // Export our plugin as a UMD library (compatible with all module definitions - CommonJS, AMD and global variable)
-    library: '{{pascalcase name}}Plugin',
+    library: 'QueryBarPlugin',
     libraryTarget: 'umd'
   },
   resolve: {
@@ -52,17 +53,16 @@ module.exports = {
           { loader: 'css-loader' }
         ]
       },
+      // For styles that have to be global (see https://github.com/css-modules/css-modules/pull/65)
       {
         test: /\.less$/,
-        exclude: /node_modules/,
+        include: [/\.global/, /bootstrap/],
         use: [
           { loader: 'style-loader' },
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '{{pascalcase name}}_[name]-[local]__[hash:base64:5]'
+              modules: false
             }
           },
           {
@@ -82,6 +82,42 @@ module.exports = {
             }
           }
         ]
+      },
+      // For CSS-Modules locally scoped styles
+      {
+        test: /\.less$/,
+        exclude: [/\.global/, /bootstrap/, /node_modules/],
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: 'QueryBar_[name]-[local]__[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [
+                  project.plugin.autoprefixer
+                ];
+              }
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              noIeCompat: true
+            }
+          }
+        ]
+      },
+      {
+        test: /node_modules[\\\/]JSONStream[\\\/]index\.js/,
+        use: [{ loader: 'shebang-loader' }]
       },
       {
         test: /\.(js|jsx)$/,
@@ -124,7 +160,6 @@ module.exports = {
     // Defines global variables
     new webpack.DefinePlugin(GLOBALS)
   ],
-  devtool: 'cheap-source-map',
   stats: {
     colors: true,
     children: false,

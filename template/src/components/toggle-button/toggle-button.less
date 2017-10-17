@@ -1,3 +1,5 @@
+@import "~less/compass/_theme.less";
+
 .button {
 	border: none;
 	background: none;
@@ -20,8 +22,8 @@
 }
 
 .button--ghost {
-	border: 3px solid #fff;
-	color: #fff;
+	border: 3px solid @pw;
+	color: @pw;
 }
 
 .button--animateFromTop {
@@ -30,7 +32,7 @@
 		height: 0;
 		top: 0;
 		left: 0;
-		background: #fff;
+		background: @pw;
 	}
 
 	&::after,
