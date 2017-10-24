@@ -66,6 +66,10 @@ module.exports = {
             }
           },
           {
+            test: /\.node$/,
+            use: 'node-loader'
+          },
+          {
             loader: 'postcss-loader',
             options: {
               plugins: function() {

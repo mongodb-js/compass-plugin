@@ -93,6 +93,10 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
+      },
       // For CSS-Modules locally scoped styles
       {
         test: /\.less$/,
