@@ -2,6 +2,7 @@
   "name": "{{slugcase name}}",
   "productName": "{{capitalcase name}} plugin",
   "version": "1.0.0",
+  "pluginApiVersion": "1.0.0",
   "description": "{{description}}",
   "main": "lib/index.js",
   "scripts": {
