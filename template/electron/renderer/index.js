@@ -48,7 +48,7 @@ render({{pascalcase name}}Plugin);
 // import Connection from 'mongodb-connection-model';
 // import DataService from 'mongodb-data-service';
 //
-// const connnection = new Connection({
+// const connection = new Connection({
 //   hostname: '127.0.0.1',
 //   port: 27017,
 //   ns: 'databaseName',
