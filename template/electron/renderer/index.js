@@ -35,8 +35,48 @@ const render = Component => {
   );
 };
 
-// Render our plugin
+// For initialization events to happen in isolation, uncomment the
+// following lines as needed in the same places they are commented out.
+//
+// // Application was initialized.
+// appRegistry.emit('application-initialized', '1.11.0-dev');
+
+// Render our plugin - don't remove the following line.
 render({{pascalcase name}}Plugin);
+
+// // Data service initialization and connection.
+// import Connection from 'mongodb-connection-model';
+// import DataService from 'mongodb-data-service';
+//
+// const connnection = new Connection({
+//   hostname: '127.0.0.1',
+//   port: 27017,
+//   ns: 'databaseName',
+//   mongodb_database_name: 'admin',
+//   mongodb_username: '<user>',
+//   mongodb_password: '<password>'
+// });
+// const dataService = new DataService(connection);
+//
+// appRegistry.emit('data-service-initialized', dataService);
+// dataService.connect((error, ds) => {
+//    appRegistry.emit('data-service-connected', error, dataService);
+// });
+
+// For automatic switching to specific namespaces, uncomment below as needed.
+// appRegistry.emit('collection-changed', 'database.collection');
+// appRegistry.emit('database-changed', 'database');
+
+// For plugins based on query execution, comment out below:
+// const query = {
+//   filter: { name: 'testing' },
+//   project: { name: 1 },
+//   sort: { name: -1 },
+//   skip: 0,
+//   limit: 20,
+//   ns: 'database.collection'
+// }
+// appRegistry.emit('query-applied', query);
 
 if (module.hot) {
   /**
