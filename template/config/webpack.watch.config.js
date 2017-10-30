@@ -66,10 +66,6 @@ module.exports = {
             }
           },
           {
-            test: /\.node$/,
-            use: 'node-loader'
-          },
-          {
             loader: 'postcss-loader',
             options: {
               plugins: function() {
@@ -86,6 +82,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
       },
       // For CSS-Modules locally scoped styles
       {
