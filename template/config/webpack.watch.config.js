@@ -134,7 +134,9 @@ module.exports = {
           loader: 'file-loader',
           query: {
             name: 'assets/images/[name]__[hash:base64:5].[ext]',
-            publicPath: `${path.join(__dirname, '..', 'lib')}/`
+            publicPath: function(file) {
+              return path.join(__dirname, '..', 'lib', file);
+            }
           }
         }]
       },
@@ -144,7 +146,9 @@ module.exports = {
           loader: 'file-loader',
           query: {
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]',
-            publicPath: `${path.join(__dirname, '..', 'lib')}/`
+            publicPath: function(file) {
+              return path.join(__dirname, '..', 'lib', file);
+            }
           }
         }]
       }
