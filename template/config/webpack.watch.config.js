@@ -24,7 +24,7 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js',
     // Export our plugin as a UMD library (compatible with all module definitions - CommonJS, AMD and global variable)
-    library: 'QueryBarPlugin',
+    library: '{{pascalcase name}}Plugin',
     libraryTarget: 'umd'
   },
   resolve: {
@@ -98,7 +98,7 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: 'QueryBar_[name]-[local]__[hash:base64:5]'
+              localIdentName: '{{pascalcase name}}Plugin_[name]-[local]__[hash:base64:5]'
             }
           },
           {

@@ -83,7 +83,7 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: 'QueryBar_[name]-[local]__[hash:base64:5]'
+              localIdentName: '{{pascalcase name}}Plugin_[name]-[local]__[hash:base64:5]'
             }
           },
           {

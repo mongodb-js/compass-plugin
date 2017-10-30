@@ -108,7 +108,7 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: 'QueryBar_[name]-[local]__[hash:base64:5]'
+              localIdentName: '{{pascalcase name}}Plugin_[name]-[local]__[hash:base64:5]'
             }
           },
           {
@@ -141,7 +141,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [{
-          loader: 'file-loader',
+          loader: 'url-loader',
           query: {
             limit: 8192,
             name: 'assets/images/[name]__[hash:base64:5].[ext]'
@@ -151,7 +151,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: 'file-loader',
+          loader: 'url-loader',
           query: {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
