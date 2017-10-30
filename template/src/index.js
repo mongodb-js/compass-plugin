@@ -18,11 +18,11 @@ function activate(appRegistry) {
   // Register the {{pascalcase name}}Plugin as a role in Compass
   //
   // Available roles are:
-  //   - Instance.Tab
-  //   - Database.Tab
-  //   - Collection.Tab
-  //   - CollectionHUD.Item
-  //   - Header.Item
+  //   - Instance.Tab: { name: <String>, component: <React.Component>, order: <Number> }
+  //   - Database.Tab: { name: <String>, component: <React.Component>, order: <Number> }
+  //   - Collection.Tab: { name: <String>, component: <React.Component>, order: <Number> }
+  //   - CollectionHUD.Item: { name <String>, component: <React.Component> }
+  //   - Header.Item: { name: <String>, component: <React.Component>, alignment: <String> }
 
   appRegistry.registerRole('{{role}}', ROLE);
   appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
