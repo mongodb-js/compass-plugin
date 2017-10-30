@@ -134,7 +134,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'file-loader',
           query: {
             limit: 8192,
             name: 'assets/images/[name]__[hash:base64:5].[ext]'
@@ -144,7 +144,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'file-loader',
           query: {
             limit: 8192,
             name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
