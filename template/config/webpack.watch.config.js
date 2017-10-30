@@ -13,7 +13,7 @@ const GLOBALS = {
 
 module.exports = {
   target: 'electron-renderer',
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   watch: true,
   entry: {
     // Export the entry to our plugin. Referenced in package.json main.
