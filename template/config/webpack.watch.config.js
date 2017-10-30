@@ -133,8 +133,8 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           query: {
-            limit: 8192,
-            name: 'assets/images/[name]__[hash:base64:5].[ext]'
+            name: 'assets/images/[name]__[hash:base64:5].[ext]',
+            publicPath: `${path.join(__dirname, '..', 'lib')}/`
           }
         }]
       },
@@ -143,8 +143,8 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           query: {
-            limit: 8192,
-            name: 'assets/fonts/[name]__[hash:base64:5].[ext]'
+            name: 'assets/fonts/[name]__[hash:base64:5].[ext]',
+            publicPath: `${path.join(__dirname, '..', 'lib')}/`
           }
         }]
       }
