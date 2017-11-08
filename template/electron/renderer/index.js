@@ -61,7 +61,7 @@ render({{pascalcase name}}Plugin);
 //
 // appRegistry.emit('data-service-initialized', dataService);
 // dataService.connect((error, ds) => {
-//    appRegistry.emit('data-service-connected', error, dataService);
+//    appRegistry.emit('data-service-connected', error, ds);
 // });
 
 // For automatic switching to specific namespaces, uncomment below as needed.
