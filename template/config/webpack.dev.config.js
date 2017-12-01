@@ -48,6 +48,8 @@ module.exports = {
       images: path.join(project.path.src, 'assets/images'),
       less: path.join(project.path.src, 'assets/less'),
       models: path.join(project.path.src, 'models'),
+      'action-creators': path.join(project.path.src, 'action-creators'),
+      reducers: path.join(project.path.src, 'reducers'),
       plugin: path.join(project.path.src, 'index.js'),
       stores: path.join(project.path.src, 'stores'),
       storybook: project.path.storybook,
