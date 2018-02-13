@@ -62,22 +62,21 @@ render({{pascalcase name}}Plugin);
 // appRegistry.emit('data-service-initialized', dataService);
 // dataService.connect((error, ds) => {
 //    appRegistry.emit('data-service-connected', error, ds);
+//    For automatic switching to specific namespaces, uncomment below as needed.
+//    appRegistry.emit('collection-changed', 'database.collection');
+//    appRegistry.emit('database-changed', 'database');
+
+//    For plugins based on query execution, comment out below:
+//    const query = {
+//      filter: { name: 'testing' },
+//      project: { name: 1 },
+//      sort: { name: -1 },
+//      skip: 0,
+//      limit: 20,
+//      ns: 'database.collection'
+//    }
+//    appRegistry.emit('query-applied', query);
 // });
-
-// For automatic switching to specific namespaces, uncomment below as needed.
-// appRegistry.emit('collection-changed', 'database.collection');
-// appRegistry.emit('database-changed', 'database');
-
-// For plugins based on query execution, comment out below:
-// const query = {
-//   filter: { name: 'testing' },
-//   project: { name: 1 },
-//   sort: { name: -1 },
-//   skip: 0,
-//   limit: 20,
-//   ns: 'database.collection'
-// }
-// appRegistry.emit('query-applied', query);
 
 if (module.hot) {
   /**
