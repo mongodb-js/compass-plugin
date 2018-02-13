@@ -6,6 +6,7 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.json', 'less'],
     alias: {
+      actions: path.join(project.path.src, 'actions'),
       components: path.join(project.path.src, 'components'),
       constants: path.join(project.path.src, 'constants'),
       fonts: path.join(project.path.src, 'assets/fonts'),
