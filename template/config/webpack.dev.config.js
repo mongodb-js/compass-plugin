@@ -7,14 +7,14 @@ const { spawn } = require('child_process');
 const baseWebpackConfig = require('./webpack.base.config');
 const project = require('./project');
 
-const config = {
+const GLOBALS = {
   'process.env': {
     'NODE_ENV': JSON.stringify('development')
   },
   __DEV__: JSON.stringify(JSON.parse('true'))
 };
 
-module.exports = {
+const config = {
   target: 'electron-renderer',
   devtool: 'eval-source-map',
   entry: {
