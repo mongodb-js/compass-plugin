@@ -11,7 +11,7 @@ describe('{{pascalcase name}} [Component]', () => {
   let toggleStatus;
 
   beforeEach(() => {
-    toggleStatus = sinon.apy();
+    toggleStatus = sinon.spy();
     component = mount(<{{pascalcase name}} toggleStatus={toggleStatus} status="enabled" />);
   });
 
