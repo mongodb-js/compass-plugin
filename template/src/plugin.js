@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { StoreConnector } from 'hadron-react-components';
+import { Provider } from 'react-redux';
 import {{pascalcase name}} from 'components/{{name}}';
 import store from 'stores';
-import actions from 'actions';
 
 class Plugin extends Component {
   static displayName = '{{pascalcase name}}Plugin';
@@ -14,12 +13,11 @@ class Plugin extends Component {
    */
   render() {
     return (
-      <StoreConnector store={store}>
-        <{{pascalcase name}} actions={actions} {...this.props} />
-      </StoreConnector>
+      <Provider store={store}>
+        <{{pascalcase name}} />
+      </Provider>
     );
   }
 }
 
 export default Plugin;
-export { Plugin };

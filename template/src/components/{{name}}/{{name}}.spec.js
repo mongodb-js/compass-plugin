@@ -3,22 +3,21 @@ import { mount } from 'enzyme';
 
 import {{pascalcase name}} from 'components/{{name}}';
 import ToggleButton from 'components/toggle-button';
+import store from 'stores';
 import styles from './{{name}}.less';
 
 describe('{{pascalcase name}} [Component]', () => {
   let component;
-  let actions;
+  let toggleStatus;
 
-  beforeEach((done) => {
-    actions = { toggleStatus: sinon.stub() };
-    component = mount(<{{pascalcase name}} actions={actions} />);
-    done();
+  beforeEach(() => {
+    toggleStatus = sinon.apy();
+    component = mount(<{{pascalcase name}} toggleStatus={toggleStatus} status="enabled" />);
   });
 
-  afterEach((done) => {
+  afterEach(() => {
     component = null;
-    actions = null;
-    done();
+    toggleStatus = null;
   });
 
   it('renders the correct root classname', () => {

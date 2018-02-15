@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ToggleButton from 'components/toggle-button';
+import { toggleStatus } from 'modules/status';
 
 import styles from './{{name}}.less';
 
@@ -9,7 +11,7 @@ class {{pascalcase name}} extends Component {
   static displayName = '{{pascalcase name}}Component';
 
   static propTypes = {
-    actions: PropTypes.object.isRequired,
+    toggleStatus: PropTypes.func.isRequired,
     status: PropTypes.oneOf(['enabled', 'disabled'])
   };
 
@@ -18,7 +20,7 @@ class {{pascalcase name}} extends Component {
   };
 
   onClick = () => {
-    this.props.actions.toggleStatus();
+    this.props.toggleStatus();
   }
 
   /**
@@ -38,5 +40,26 @@ class {{pascalcase name}} extends Component {
   }
 }
 
-export default {{pascalcase name}};
-export { {{pascalcase name}} };
+/**
+ * Map the store state to properties to pass to the components.
+ *
+ * @param {Object} state - The store state.
+ *
+ * @returns {Object} The mapped properties.
+ */
+const mapStateToProps = (state) => ({
+  status: state.status
+});
+
+/**
+ * Connect the redux store to the component.
+ * (dispatch)
+ */
+const Mapped{{pascalcase name}} = connect(
+  mapStateToProps,
+  {
+    toggleStatus
+  },
+)({{pascalcase name}});
+
+export default Mapped{{pascalcase name}};

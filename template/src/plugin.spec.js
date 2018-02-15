@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { StoreConnector } from 'hadron-react-components';
+import { Provider } from 'react-redux';
 import {{pascalcase name}}Plugin from './plugin';
 
 describe('{{pascalcase name}} [Plugin]', () => {
@@ -16,7 +16,7 @@ describe('{{pascalcase name}} [Plugin]', () => {
     done();
   });
 
-  it('should contain a <StoreConnector /> with a store prop', () => {
-    expect(component.find(StoreConnector).first().props('store')).to.be.an('object');
+  it('should contain a <Provider /> with a store prop', () => {
+    expect(component.find(Provider).first().props('store')).to.be.an('object');
   });
 });

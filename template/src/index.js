@@ -1,5 +1,4 @@
 import {{pascalcase name}}Plugin from './plugin';
-import {{pascalcase name}}Actions from 'actions';
 import {{pascalcase name}}Store from 'stores';
 
 /**
@@ -25,7 +24,6 @@ function activate(appRegistry) {
   //   - Header.Item: { name: <String>, component: <React.Component>, alignment: <String> }
 
   appRegistry.registerRole('{{role}}', ROLE);
-  appRegistry.registerAction('{{pascalcase name}}.Actions', {{pascalcase name}}Actions);
   appRegistry.registerStore('{{pascalcase name}}.Store', {{pascalcase name}}Store);
 }
 
@@ -35,7 +33,6 @@ function activate(appRegistry) {
  **/
 function deactivate(appRegistry) {
   appRegistry.deregisterRole('{{role}}', ROLE);
-  appRegistry.deregisterAction('{{pascalcase name}}.Actions');
   appRegistry.deregisterStore('{{pascalcase name}}.Store');
 }
 

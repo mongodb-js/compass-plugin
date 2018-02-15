@@ -78,3 +78,5 @@ const config = {
     modules: false
   }
 };
+
+module.exports = merge.smart(baseWebpackConfig, config);
