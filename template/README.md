@@ -60,6 +60,17 @@ Almost all of your development will happen in the `./src` directory. Add new com
 to `./src/components`, actions to `./src/actions/index.js` and if you need additional
 stores, add them to `./src/stores`.
 
+To be able to debug the plugin inside `compass` make sure [webpack prod
+config](./config/webpack.prod.config.js) has `devtool` is set to `source-map`.
+If you want faster compiler time when you commit/push, switch it to `false.`
+
+```js
+const config = {
+  target: 'electron-renderer',
+  devtool: 'source-map'
+}
+```
+
 #### Directory Structure
 
 For completeness, below is a list of directories present in this module:
@@ -82,8 +93,8 @@ For completeness, below is a list of directories present in this module:
 
 Apache 2.0
 
-[travis_img]: https://travis-ci.com/10gen/10gen/{{slugcase name}}.svg?style=flat-square
-[travis_url]: https://travis-ci.com/10gen/{{slugcase name}}
+[travis_img]: https://img.shields.io/travis/mongodb-js/10gen/{{slugcase name}}/master.svg?style=flat-square
+[travis_url]: https://travis-ci.com/mongodb-js/{{slugcase name}}
 [react-storybook]: https://github.com/kadirahq/react-storybook
 [enzyme]: http://airbnb.io/enzyme/
 [enzyme-chai]: https://github.com/producthunt/chai-enzyme
