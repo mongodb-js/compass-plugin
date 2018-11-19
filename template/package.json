@@ -26,6 +26,9 @@
   "precommit": [
     "check"
   ],
+  "dependency-check": {
+    "ignore": ["react-dom"]
+  },
   "license": "Apache-2.0",
   "peerDependencies": {
     "debug": "^3.0.1",
