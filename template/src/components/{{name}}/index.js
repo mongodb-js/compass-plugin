@@ -1,4 +1,4 @@
-import {{pascalcase name}} from './{{name}}';
+import Mapped{{pascalcase name}}, { {{pascalcase name}} } from './{{name}}';
 
-export default {{pascalcase name}};
+export default Mapped{{pascalcase name}};
 export { {{pascalcase name}} };

@@ -63,3 +63,4 @@ const Mapped{{pascalcase name}} = connect(
 )({{pascalcase name}});
 
 export default Mapped{{pascalcase name}};
+export { {{pascalcase name}} };
