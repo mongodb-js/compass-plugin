@@ -22,7 +22,9 @@ appRegistry.onActivated();
 
 // Since we are using HtmlWebpackPlugin WITHOUT a template,
 // we should create our own root node in the body element before rendering into it.
+
 const root = document.createElement('div');
+
 root.id = 'root';
 document.body.appendChild(root);
 
@@ -86,6 +88,7 @@ if (module.hot) {
    * See https://github.com/gaearon/react-hot-loader/issues/298
    */
   const orgError = console.error; // eslint-disable-line no-console
+
   console.error = (message) => { // eslint-disable-line no-console
     if (message && message.indexOf('You cannot change <Router routes>;') === -1) {
       // Log the error as normally
@@ -93,9 +96,5 @@ if (module.hot) {
     }
   };
 
-  module.hot.accept('plugin', () => {
-    // Because Webpack 2 has built-in support for ES2015 modules,
-    // you won't need to re-require your app root in module.hot.accept
-    render({{pascalcase name}}Plugin);
-  });
+  module.hot.accept('plugin', () => render({{pascalcase name}}Plugin));
 }
