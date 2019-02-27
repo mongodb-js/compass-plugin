@@ -2,7 +2,6 @@ const path = require('path');
 const project = require('./project');
 
 module.exports = {
-  mode: (process.env.NODE_ENV !== 'production') ? 'development' : 'production',
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.json', 'less', '.wasm'],
@@ -18,7 +17,8 @@ module.exports = {
       plugin: path.join(project.path.src, 'index.js'),
       stores: path.join(project.path.src, 'stores'),
       storybook: project.path.storybook,
-      utils: path.join(project.path.src, 'utils')
+      utils: path.join(project.path.src, 'utils'),
+      'react-dom': '@hot-loader/react-dom'
     }
   },
   module: {
