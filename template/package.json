@@ -35,7 +35,7 @@
   "license": "Apache-2.0",
   "peerDependencies": {
     "@hot-loader/react-dom": "^16.8.2",
-    "debug": "^3.0.1",
+    "debug": "mongodb-js/debug#v2.2.3",
     "prop-types": "^15.5.8",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.1",
