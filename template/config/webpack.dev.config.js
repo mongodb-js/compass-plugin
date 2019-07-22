@@ -13,18 +13,15 @@ const config = {
   devtool: 'eval-source-map',
   entry: {
     index: [
-      // activate HMR for React
+      // Activate HMR for React
       'react-hot-loader/patch',
-
-      // bundle the client for webpack-dev-server
+      // Bundle the client for webpack-dev-server
       // and connect to the provided endpoint
       'webpack-dev-server/client?http://0.0.0.0:8080',
-
-      // bundle the client for hot reloading
+      // Bundle the client for hot reloading
       // only- means to only hot reload for successful updates
       'webpack/hot/only-dev-server',
-
-      // the entry point of our plugin for dev
+      // The entry point of our plugin for dev
       path.resolve(project.path.electron, 'renderer/index.js')
     ]
   },
@@ -60,10 +57,8 @@ const config = {
   plugins: [
     // Enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
-
     // Do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin(),
-
     // Creates HTML page for us at build time
     new HtmlWebpackPlugin()
   ],
