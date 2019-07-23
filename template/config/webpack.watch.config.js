@@ -55,7 +55,6 @@ const config = {
     // Auto-create webpack externals for any dependency listed as a peerDependency in package.json
     // so that the external vendor JavaScript is not part of our compiled bundle
     new PeerDepsExternalsPlugin(),
-
     // Do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin()
   ],

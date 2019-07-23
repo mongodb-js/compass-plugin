@@ -10,9 +10,6 @@ addDecorator(PageDecorator);
 // Dynamically load all stories found in the components directory that
 // match the .stores.js extension
 const req = require.context('../src', true, /\.stories\.js$/);
-
-function loadStories() {
-  req.keys().forEach((filename) => req(filename));
-}
+const loadStories = () => req.keys().forEach((filename) => req(filename));
 
 configure(loadStories, module);

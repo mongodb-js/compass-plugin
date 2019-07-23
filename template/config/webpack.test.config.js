@@ -6,7 +6,8 @@ const project = require('./project');
 
 const config = {
   mode: 'none',
-  target: 'node', // webpack should compile node compatible code for tests
+  target: 'node', // Webpack should compile node compatible code for tests
+  devtool: 'source-map',
   externals: [ nodeExternals() ],
   stats: {
     warnings: false
